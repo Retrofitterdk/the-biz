@@ -5,11 +5,11 @@
  * be filtered through this file and eventually saved back into the
  * `/dist/js/app.js` file.
  *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @package   TheBiz
+ * @author    Steffen Bang Nielsen <sbn@retrofitter.dk>
+ * @copyright 2018 Steffen Bang Nielsen
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/mythic
+ * @link      https://retrofitter.dk
  */
 
 /**

@@ -5,14 +5,14 @@
  * This file holds template tags for the theme. Template tags are PHP functions
  * meant for use within theme templates.
  *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @package   TheBiz
+ * @author    Steffen Bang Nielsen <sbn@retrofitter.dk>
+ * @copyright 2018 Steffen Bang Nielsen
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/mythic
+ * @link      https://retrofitter.dk
  */
 
-namespace Mythic;
+namespace TheBiz;
 
 /**
  * Returns the metadata separator.
@@ -25,10 +25,10 @@ namespace Mythic;
 function sep( $sep = '' ) {
 
 	return apply_filters(
-		'mythic/sep',
+		'the_biz/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'the-biz' )
 		)
 	);
 }

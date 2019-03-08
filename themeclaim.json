@@ -1,11 +1,18 @@
 {
-	"from": {
-		"Name": "Mythic",
-		"Description": "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
-		"Namespace": "Mythic",
-		"Uri": "https://themehybrid.com/themes/mythic",
-		"Author": "Justin Tadlock",
-		"AuthorEmail": "justintadlock@gmail.com",
-		"AuthorUri": "https://themehybrid.com"
-	}
+  "from": {
+    "Name": "Mythic",
+    "Description": "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
+    "Uri": "https://themehybrid.com/themes/mythic",
+    "Author": "Justin Tadlock",
+    "AuthorEmail": "justintadlock@gmail.com",
+    "AuthorUri": "https://themehybrid.com"
+  },
+  "to": {
+    "Name": "The Biz",
+    "Description": "The Biz is business theme for WordPress designed to make it easy for business owners to create their own expression on the web.",
+    "Uri": "https://retrofitter.dk",
+    "Author": "Steffen Bang Nielsen",
+    "AuthorEmail": "sbn@retrofitter.dk",
+    "AuthorUri": "https://retrofitter.dk"
+  }
 }

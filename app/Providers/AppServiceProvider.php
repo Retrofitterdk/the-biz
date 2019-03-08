@@ -6,17 +6,17 @@
  * They allow you to add bindings to the container on registration and boot them
  * once everything has been registered.
  *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @package   TheBiz
+ * @author    Steffen Bang Nielsen <sbn@retrofitter.dk>
+ * @copyright 2018 Steffen Bang Nielsen
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/mythic
+ * @link      https://retrofitter.dk
  */
 
-namespace Mythic\Providers;
+namespace TheBiz\Providers;
 
 use Hybrid\Tools\ServiceProvider;
-use Mythic\Customize\Customize;
+use TheBiz\Customize\Customize;
 
 /**
  * App service provider.
@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider {
 		$this->app->singleton( Customize::class );
 
 		// Bind the Laravel Mix manifest for cache-busting.
-		$this->app->singleton( 'mythic/mix', function() {
+		$this->app->singleton( 'the_biz/mix', function() {
 
 			$file = get_theme_file_path( 'dist/mix-manifest.json' );
 

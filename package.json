@@ -1,10 +1,10 @@
 {
-	"name": "mythic",
+	"name": "the-biz",
 	"version": "1.0.0",
-	"description": "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
-	"author": "Justin Tadlock",
+	"description": "The Biz is business theme for WordPress designed to make it easy for business owners to create their own expression on the web.",
+	"author": "Steffen Bang Nielsen",
 	"license": "GPL-2.0+",
-	"homepage": "https://themehybrid.com/themes/mythic",
+	"homepage": "https://retrofitter.dk",
 	"main": "resources/js/app.js",
 	"scripts": {
 		"build": "npm run prod && npm run i18n && npm run export",
@@ -25,29 +25,29 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/justintadlock/mythic.git"
+		"url": "git+https://github.com/steffenbangnielsen/thebiz.git"
 	},
 	"bugs": {
-		"url": "https://github.com/justintadlock/mythic/issues"
+		"url": "https://github.com/steffenbangnielsen/thebiz/issues"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.26.3",
 		"browser-sync-webpack-plugin": "2.2.2",
 		"copy-webpack-plugin": "^4.6.0",
 		"cross-env": "^5.2.0",
-		"eslint": "^5.12.0",
+		"eslint": "^5.15.1",
 		"eslint-config-wordpress": "^2.0.0",
 		"imagemin-mozjpeg": "^6.0.0",
-		"imagemin-webpack-plugin": "^2.4.0",
+		"imagemin-webpack-plugin": "^2.4.2",
 		"laravel-mix": "^4.0.14",
-		"node-wp-i18n": "^1.2.2",
-		"postcss-preset-env": "^6.5.0",
+		"node-wp-i18n": "^1.2.3",
+		"postcss-preset-env": "^6.6.0",
 		"rimraf": "^2.6.3",
-		"sass": "^1.16.0",
+		"sass": "^1.17.2",
 		"sass-loader": "^7.1.0",
-		"stylelint": "^9.9.0",
+		"stylelint": "^9.10.1",
 		"stylelint-config-wordpress": "^13.1.0",
 		"theme-claim": "^0.1.2",
-		"vue-template-compiler": "^2.5.22"
+		"vue-template-compiler": "^2.6.8"
 	}
 }

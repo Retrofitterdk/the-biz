@@ -10,14 +10,14 @@
  * things in this file. Those APIs should be used instead of attempting to use
  * `remove_action()`.
  *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @package   TheBiz
+ * @author    Steffen Bang Nielsen <sbn@retrofitter.dk>
+ * @copyright 2018 Steffen Bang Nielsen
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/mythic
+ * @link      https://retrofitter.dk
  */
 
-namespace Mythic;
+namespace TheBiz;
 
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
@@ -37,7 +37,7 @@ add_action( 'after_setup_theme', function() {
 	$GLOBALS['content_width'] = 750;
 
 	// Load theme translations.
-	load_theme_textdomain( 'mythic', get_parent_theme_file_path( 'resources/lang' ) );
+	load_theme_textdomain( 'the-biz', get_parent_theme_file_path( 'resources/lang' ) );
 
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
@@ -77,22 +77,22 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_colors.scss` file.
 	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => __( 'Charcoal' ),
+			'name'  => __( 'Charcoal', 'the-biz' ),
 			'slug'  => 'charcoal',
 			'color' => '#282c34'
 		],
 		[
-			'name'  => __( 'Regent' ),
+			'name'  => __( 'Regent', 'the-biz' ),
 			'slug'  => 'regent',
 			'color' => '#8c97a7',
 		],
 		[
-			'name'  => __( 'Husk' ),
+			'name'  => __( 'Husk', 'the-biz' ),
 			'slug'  => 'husk',
 			'color' => '#B9A364',
 		],
 		[
-			'name'  => __( 'Red Stage' ),
+			'name'  => __( 'Red Stage', 'the-biz' ),
 			'slug'  => 'red-stage',
 			'color' => '#b15330',
 		]
@@ -102,26 +102,26 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_fonts.scss` file.
 	add_theme_support( 'editor-font-sizes', [
 		[
-			'name'      => __( 'Small' ),
-			'shortName' => __( 'S' ),
+			'name'      => __( 'Small', 'the-biz' ),
+			'shortName' => __( 'S', 'the-biz' ),
 			'size'      => 12,
 			'slug'      => 'small'
 		],
 		[
-			'name'      => __( 'Regular' ),
-			'shortName' => __( 'M' ),
+			'name'      => __( 'Regular', 'the-biz' ),
+			'shortName' => __( 'M', 'the-biz' ),
 			'size'      => 16,
 			'slug'      => 'regular'
 		],
 		[
-			'name'      => __( 'Large' ),
-			'shortName' => __( 'L' ),
+			'name'      => __( 'Large', 'the-biz' ),
+			'shortName' => __( 'L', 'the-biz' ),
 			'size'      => 36,
 			'slug'      => 'large'
 		],
 		[
-			'name'      => __( 'Larger' ),
-			'shortName' => __( 'XL' ),
+			'name'      => __( 'Larger', 'the-biz' ),
+			'shortName' => __( 'XL', 'the-biz' ),
 			'size'      => 48,
 			'slug'      => 'larger'
 		]
@@ -201,7 +201,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location' )
+		'primary' => esc_html_x( 'Primary', 'nav menu location', 'the-biz' )
 	] );
 
 }, 5 );
@@ -224,7 +224,7 @@ add_action( 'init', function() {
 	set_post_thumbnail_size( 178, 100, true );
 
 	// Register custom image sizes.
-	add_image_size( 'mythic-medium', 750, 422, true );
+	add_image_size( 'the-biz-medium', 750, 422, true );
 
 }, 5 );
 
@@ -248,7 +248,7 @@ add_action( 'widgets_init', function() {
 
 	register_sidebar( [
 		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar' )
+		'name' => esc_html_x( 'Primary', 'sidebar', 'the-biz' )
 	] + $args );
 
 }, 5 );
