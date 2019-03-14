@@ -15,9 +15,10 @@
 @function breaks() {
 
 	@return (
-		medium : 782px,
-		small  : 600px,
-		mobile : 480px
+		wide   : 1380px,
+		medium : 1168px,
+		small  : 768px,
+		mobile : 600px
 	);
 }
 
