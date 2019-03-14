@@ -8,6 +8,7 @@ class ComposerStaticIniteeda10f684367ee8c383032baf56ce27
 {
     public static $files = array (
         '77c7b76f4dcd3556a40cd339441c5cce' => __DIR__ . '/..' . '/justintadlock/hybrid-core/src/bootstrap-hybrid.php',
+        'c63d25cb66ea792ddf16ba3c9336aa4c' => __DIR__ . '/..' . '/justintadlock/hybrid-font/src/bootstrap-font.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -17,6 +18,8 @@ class ComposerStaticIniteeda10f684367ee8c383032baf56ce27
         ),
         'H' => 
         array (
+            'Hybrid\\Carbon\\' => 14,
+            'Hybrid\\Breadcrumbs\\' => 19,
             'Hybrid\\' => 7,
         ),
         'D' => 
@@ -33,6 +36,14 @@ class ComposerStaticIniteeda10f684367ee8c383032baf56ce27
         'TheBiz\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Hybrid\\Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justintadlock/hybrid-carbon/src',
+        ),
+        'Hybrid\\Breadcrumbs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justintadlock/hybrid-breadcrumbs/src',
         ),
         'Hybrid\\' => 
         array (

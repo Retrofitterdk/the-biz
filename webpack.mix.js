@@ -176,7 +176,7 @@ if ( process.env.sync ) {
 	 * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
 	 */
 	mix.browserSync( {
-		proxy : 'localhost',
+		proxy: 'finkom.local',
 		files : [
 			'dist/**/*',
 			`${devPath}/views/**/*.php`,

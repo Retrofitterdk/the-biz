@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'TheBiz\\' => array($baseDir . '/app'),
+    'Hybrid\\Carbon\\' => array($vendorDir . '/justintadlock/hybrid-carbon/src'),
+    'Hybrid\\Breadcrumbs\\' => array($vendorDir . '/justintadlock/hybrid-breadcrumbs/src'),
     'Hybrid\\' => array($vendorDir . '/justintadlock/hybrid-core/src'),
     'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
