@@ -48,6 +48,9 @@ add_action( 'after_setup_theme', function() {
 	// Adds featured image support.
 	add_theme_support( 'post-thumbnails' );
 
+	// Adds post format support.
+    add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
+
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
