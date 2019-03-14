@@ -1,6 +1,7 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
 	<header class="entry__header">
+		<?php Hybrid\View\display( 'media', Hybrid\Post\hierarchy() ) ?>
 		<?php Hybrid\Post\display_title() ?>
 
 		<div class="entry__byline">
