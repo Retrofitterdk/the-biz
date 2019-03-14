@@ -1,0 +1,1 @@
+<?php Hybrid\Carbon\Image::display( 'featured' ) ?>
