@@ -1,0 +1,1 @@
+<?php Hybrid\Post\display_date() ?>			
