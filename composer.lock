@@ -212,16 +212,16 @@
         },
         {
             "name": "justintadlock/hybrid-core",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "051ff5109c45dda640f28b343a2bf179a5bbfd10"
+                "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/051ff5109c45dda640f28b343a2bf179a5bbfd10",
-                "reference": "051ff5109c45dda640f28b343a2bf179a5bbfd10",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/69e1ff5bdec260fb5259efacc55715559f47b70b",
+                "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b",
                 "shasum": ""
             },
             "require": {
@@ -253,20 +253,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-12-11T16:06:07+00:00"
+            "time": "2019-04-04T16:38:23+00:00"
         },
         {
             "name": "justintadlock/hybrid-font",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-font.git",
-                "reference": "e20b8074dd73ae97f0f2a1407f1d959b15f1a487"
+                "reference": "c30c5431c659fb77b95b759dea8a4a8374c8bc8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-font/zipball/e20b8074dd73ae97f0f2a1407f1d959b15f1a487",
-                "reference": "e20b8074dd73ae97f0f2a1407f1d959b15f1a487",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-font/zipball/c30c5431c659fb77b95b759dea8a4a8374c8bc8a",
+                "reference": "c30c5431c659fb77b95b759dea8a4a8374c8bc8a",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-14T20:42:23+00:00"
+            "time": "2019-05-15T15:17:21+00:00"
         }
     ],
     "packages-dev": [
@@ -527,16 +527,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.4.0",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "379deb987e26c7cd103a7b387aea178baec96e48"
+                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/379deb987e26c7cd103a7b387aea178baec96e48",
-                "reference": "379deb987e26c7cd103a7b387aea178baec96e48",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
+                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
                 "shasum": ""
             },
             "require": {
@@ -569,12 +569,12 @@
                 }
             ],
             "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-12-19T23:57:18+00:00"
+            "time": "2019-04-10T23:49:02+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
