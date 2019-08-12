@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', function() {
 
 	// Sets the theme content width. This variable is also set in the
 	// `resources/scss/settings/_dimensions.scss` file.
-	$GLOBALS['content_width'] = 1380;
+	$GLOBALS['content_width'] = 1240;
 
 	// Load theme translations.
 	load_theme_textdomain( 'the-biz', get_parent_theme_file_path( 'resources/lang' ) );
@@ -291,11 +291,10 @@ add_action( 'widgets_init', function() {
 
 function body_classes( $classes ) {
 	// Adds a class of no-sidebar when there is no sidebar present.
-
-	if ( is_active_sidebar( 'primary' ) ) {
-			$classes[] = 'has-sidebar';
-	} else {
-			$classes[] = 'no-sidebar';
+	if ( is_home() ) {
+		$classes[] = 'blog';
+	} elseif ( is_front_page() ) {
+		$classes[] = 'frontpage';
 	}
 	if ( is_singular() ) {
 		// Adds `singular` to singular pages.
@@ -304,11 +303,15 @@ function body_classes( $classes ) {
 		// Adds `hfeed` to non singular pages.
 		$classes[] = 'hfeed';
 	}
-	if ( is_home() ) {
-		$classes[] = 'blog';
-	} elseif ( is_front_page() ) {
-		$classes[] = 'frontpage';
+	$grid = get_theme_mod( 'two_column_grid' );
+	if ( $grid ) {
+		$classes[] = 'two-columns';
 	}
+	if ( is_active_sidebar( 'primary' ) ) {
+		$classes[] = 'has-sidebar';
+	} else {
+		$classes[] = 'no-sidebar';
+	}	
 		return $classes;
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
