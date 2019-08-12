@@ -101,6 +101,13 @@ class Customize implements Bootable {
 			$setting->transport = 'postMessage';
 		} );
 
+		// Register footer settings.
+		$manager->add_setting( 'two_column_grid', [
+			'default'           => false,
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'postMessage'
+		] );
+
 		// Register logo alignment settings.
 		$manager->add_setting( 'app_header_alignment', [
 			'default'           => 'alignleft',
@@ -120,19 +127,29 @@ class Customize implements Bootable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
+		// Register the footer controls.
+		$manager->add_control( 'two_column_grid', [
+			'label'    		=> __( 'Use two column grid in desktop view, when sidebar is active.', 'the-biz' ),
+			'section'  		=> 'layout',
+            'settings'      => 'two_column_grid',
+			'type'     		=> 'checkbox',
+			'priority'      => 10
+
+
+		] );
 		// Register the logo alignment control.
 		$manager->add_control( 'app_header_alignment', [
-                'label'          => __( 'Header alignment', 'the-biz' ),
-                'description'    => __( 'Select alignment for logo or title in header', 'the-biz' ),
-				'section'        => 'layout',
-                'settings'       => 'app_header_alignment',
-                'type'           => 'radio',
-                'choices'        => array(
-                                    'logoleft'   => __( 'Left', 'the-biz' ),
-                                    'logocenter'  => __( 'Center', 'the-biz' ),
-                                    'logoright'  => __( 'Right', 'the-biz' )
-                                    ),
-				'priority'       => 20
+            'label'         => __( 'Logo alignment', 'the-biz' ),
+            'description'   => __( 'Select alignment for logo or title in header', 'the-biz' ),
+			'section'       => 'layout',
+            'settings'      => 'app_header_alignment',
+            'type'          => 'radio',
+            'choices'       => array(
+                                'logoleft'   => __( 'Left', 'the-biz' ),
+                                'logocenter'  => __( 'Center', 'the-biz' ),
+                                'logoright'  => __( 'Right', 'the-biz' )
+                                ),
+			'priority'      => 20
 		] );
 	}
 
