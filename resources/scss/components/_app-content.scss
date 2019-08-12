@@ -9,5 +9,12 @@
 ////
 
 .app-content {
+}
 
+.two-columns.has-sidebar {
+    .app-content {
+        @media ( min-width: break( medium ) ) {
+        display: flex;
+        }
+    }
 }

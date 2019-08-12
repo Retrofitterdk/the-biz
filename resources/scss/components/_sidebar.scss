@@ -12,3 +12,11 @@
 
 	&__title {}
 }
+
+.two-columns.has-sidebar {
+    .sidebar--primary {
+        @media ( min-width: break( medium ) ) {
+        width: 31%;
+        }
+    }
+}
