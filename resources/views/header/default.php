@@ -9,7 +9,7 @@
 
 <div class="app">
 
-	<header class="app-header <?php echo get_theme_mod( 'app_header_alignment' ); ?>">
+	<header <?php Hybrid\Attr\display( 'header', 'app-header', [ 'class' => 'app-header' ] ) ?>>
 
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'the-biz' ) ?></a>
 

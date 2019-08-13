@@ -315,3 +315,20 @@ function body_classes( $classes ) {
 		return $classes;
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
+
+function headerAttr(  $attr, $context ) {
+	if ( 'app-header' !== $context ) {
+		return $attr;
+	}
+
+	$logoalignment = get_theme_mod( 'app_header_alignment' );
+
+	if ( ! $logoalignment ) {
+		return $attr;
+	}
+
+	$attr['class'] .= sprintf(' ' . $logoalignment);
+	return $attr;
+}
+
+add_filter( 'hybrid/attr/header', __NAMESPACE__ . '\headerAttr' , 10, 2 );
