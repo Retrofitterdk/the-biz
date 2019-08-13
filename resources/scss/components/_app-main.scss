@@ -10,13 +10,3 @@
 ////
 
 .app-main {}
-
-
-.two-columns.has-sidebar {
-    .app-main {
-        @media ( min-width: break( medium ) ) {
-        width: 65.5%;
-        margin-right: 3.5%;
-        }
-    }
-}

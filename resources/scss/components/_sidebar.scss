@@ -13,10 +13,10 @@
 	&__title {}
 }
 
-.two-columns.has-sidebar {
-    .sidebar--primary {
-        @media ( min-width: break( medium ) ) {
-        width: 31%;
+@media ( min-width: break( medium ) ) {
+    .two-columns.has-sidebar {
+        .sidebar--primary {
+            width: 31%;
         }
     }
 }
