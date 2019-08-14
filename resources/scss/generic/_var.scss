@@ -1,0 +1,16 @@
+////
+/// CSS variables.
+///
+/// If you prefer to work with CSS variables, use this file to define them. By
+/// default, we're outputting variables set up in `/settings`.
+///
+/// @group  Generic
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+:root {
+	@each $color-name, $color-value in block-colors() {
+		--color-#{ $color-name }: #{ $color-value };
+	}
+}
