@@ -289,6 +289,7 @@ add_action( 'widgets_init', function() {
 
 }, 5 );
 
+// Adds classes conditionally to body tag
 function body_classes( $classes ) {
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( is_home() ) {
@@ -316,6 +317,7 @@ function body_classes( $classes ) {
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
+// Adds classes conditionally to app-header
 function headerAttr(  $attr, $context ) {
 	if ( 'app-header' !== $context ) {
 		return $attr;
