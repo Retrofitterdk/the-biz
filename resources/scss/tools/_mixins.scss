@@ -5,3 +5,9 @@
 /// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
 /// @link   https://retrofitter.dk
 ////
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: $sizeValue * 1px;
+	font-size: $sizeValue * 1rem / 16;
+}

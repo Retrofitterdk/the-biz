@@ -15,9 +15,9 @@
 @function font-families() {
 
 	@return (
-		primary   : system-ui,
-		secondary : system-ui,
-		code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+		primary   : #{"PT Sans", system-ui},
+		secondary : #{"Arvo", system-ui},
+		code      : #{"Source Code Pro", Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier 10 Pitch", "Courier New", Courier, monospace}
 	);
 }
 
@@ -46,6 +46,7 @@
 	@return (
 		small   : 12px,
 		regular : 16px,
+		medium	: 24px,
 		large   : 36px,
 		larger  : 48px
 	);
@@ -61,4 +62,61 @@
 @function editor-font-size( $name ) {
 
 	@return map-get( editor-font-sizes(), $name );
+}
+
+/// Returns a map of frontend font sizes in name-value format. These are the values
+/// that should be used with the font-size @mixin
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font sizes.
+
+@function font-values() {
+
+	@return (
+		small   : 12,
+		regular : 16,
+		medium	: 24,
+		large   : 36,
+		larger  : 48
+	);
+}
+
+/// Returns a single frontend font size value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font size name.
+/// @return {string}         Font size value.
+
+@function font-value( $name ) {
+
+	@return map-get( font-values(), $name );
+}
+
+/// Returns a map of frontend line-heights in name-value format.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font size values.
+
+@function line-heights() {
+
+	@return (
+		body    : 1.5,
+		heading : 1.15,
+		code	: 1.6
+	);
+}
+
+/// Returns a single line-height value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font line-height name.
+/// @return {string}         Font line-height value.
+
+@function line-height( $name ) {
+
+	@return map-get( line-heights(), $name );
 }

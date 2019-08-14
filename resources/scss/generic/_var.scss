@@ -12,5 +12,14 @@
 :root {
 	@each $color-name, $color-value in block-colors() {
 		--color-#{ $color-name }: #{ $color-value };
+    }
+    @each $font-name, $font-value in font-families() {
+		--font-#{ $font-name }: #{ $font-value };
+	}
+	@each $fontsize-name, $fontsize-value in editor-font-sizes() {
+		--fontsize-#{ $fontsize-name }: #{ $fontsize-value };
+	}
+	@each $lineheight-name, $lineheight-value in line-heights() {
+		--lineheight-#{ $lineheight-name }: #{ $lineheight-value };
 	}
 }

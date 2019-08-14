@@ -12,3 +12,7 @@ body {
 	overflow-x: hidden;
 	margin: 0;
 }
+h1 {
+	font-family: var(--font-secondary);
+	@include font-size(font-value(large));
+}
