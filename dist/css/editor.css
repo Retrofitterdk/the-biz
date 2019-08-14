@@ -1,14 +1,205 @@
 .editor-styles-wrapper {
 	/* Do not show the outline on the skip link target. */
 }
+.editor-styles-wrapper html {
+	box-sizing: border-box;
+}
+.editor-styles-wrapper *,
+.editor-styles-wrapper *:before,
+.editor-styles-wrapper *:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
 .editor-styles-wrapper body {
 	overflow-x: hidden;
 	margin: 0;
+	background-color: var(--color-white);
+}
+.editor-styles-wrapper body,
+.editor-styles-wrapper button,
+.editor-styles-wrapper input,
+.editor-styles-wrapper select,
+.editor-styles-wrapper optgroup,
+.editor-styles-wrapper textarea {
+	color: var(--color-black);
+	font-family: var(--font-primary);
+	line-height: var(--lineheight-body);
+	font-size: 16px;
+	font-size: 1rem;
+}
+@media (min-width: 600px) {
+	.editor-styles-wrapper body,
+.editor-styles-wrapper button,
+.editor-styles-wrapper input,
+.editor-styles-wrapper select,
+.editor-styles-wrapper optgroup,
+.editor-styles-wrapper textarea {
+		font-size: 17px;
+		font-size: 1.0625rem;
+	}
+}
+@media (min-width: 880px) {
+	.editor-styles-wrapper body,
+.editor-styles-wrapper button,
+.editor-styles-wrapper input,
+.editor-styles-wrapper select,
+.editor-styles-wrapper optgroup,
+.editor-styles-wrapper textarea {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+.editor-styles-wrapper hr {
+	background-color: var(--color-light-grey);
+	border: 0;
+	height: 1px;
+	margin-top: 3rem;
+	margin-bottom: 3.5rem;
+}
+.editor-styles-wrapper img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+.editor-styles-wrapper figure {
+	margin: 0.5rem 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6 {
+	font-family: var(--font-secondary);
+	line-height: var(--lineheight-heading);
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-weight: bolder;
+	clear: both;
 }
 .editor-styles-wrapper h1 {
-	font-family: var(--font-secondary);
+	font-size: 48px;
+	font-size: 3rem;
+}
+.single .editor-styles-wrapper h1 {
 	font-size: 36px;
 	font-size: 2.25rem;
+}
+.editor-styles-wrapper h2 {
+	font-size: 36px;
+	font-size: 2.25rem;
+}
+.single .editor-styles-wrapper h2 {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+.editor-styles-wrapper h3 {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+.single .editor-styles-wrapper h3 {
+	font-size: 16px;
+	font-size: 1rem;
+}
+.editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6 {
+	font-size: 16px;
+	font-size: 1rem;
+}
+.single .editor-styles-wrapper h4, .single .editor-styles-wrapper h5, .single .editor-styles-wrapper h6 {
+	font-size: 16px;
+	font-size: 1rem;
+}
+.editor-styles-wrapper p {
+	margin: 0.5rem 0 1rem 0;
+}
+.editor-styles-wrapper dfn, .editor-styles-wrapper cite, .editor-styles-wrapper em, .editor-styles-wrapper i {
+	font-style: italic;
+}
+.editor-styles-wrapper blockquote {
+	margin: 0 1.5em;
+}
+.editor-styles-wrapper address {
+	margin: 0 0 1.5em;
+}
+.editor-styles-wrapper pre {
+	background: var(--color-light-grey);
+	font-family: var(--font-code);
+	font-size: 9.375px;
+	font-size: 0.5859375rem;
+	line-height: var(--lineheight-code);
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+.editor-styles-wrapper code, .editor-styles-wrapper kbd, .editor-styles-wrapper tt, .editor-styles-wrapper var {
+	font-family: var(--font-code);
+	font-size: 0.9375px;
+	font-size: 0.05859375rem;
+	padding: 0.2rem 0.5rem;
+	margin: 0 0.2rem;
+	font-size: 90%;
+	white-space: nowrap;
+	border: 1px solid var(--color-light-grey);
+	border-radius: 3px;
+}
+.editor-styles-wrapper pre > code {
+	display: block;
+	padding: 1rem 1.5rem;
+	white-space: pre;
+}
+.editor-styles-wrapper abbr, .editor-styles-wrapper acronym {
+	border-bottom: 1px dotted var(--color-light-grey);
+	cursor: help;
+}
+.editor-styles-wrapper mark, .editor-styles-wrapper ins {
+	background: var(--color-light-grey) t;
+	text-decoration: none;
+}
+.editor-styles-wrapper big {
+	font-size: 125%;
+}
+.editor-styles-wrapper ul, .editor-styles-wrapper ol {
+	margin: 0 0 1.5em 3em;
+	padding-left: 0;
+	margin-top: 0;
+}
+.editor-styles-wrapper ul {
+	list-style: none;
+}
+.editor-styles-wrapper ol {
+	list-style: none;
+}
+.editor-styles-wrapper li {
+	margin-bottom: 1rem;
+}
+.editor-styles-wrapper li > ul,
+.editor-styles-wrapper li > ol {
+	margin: 1.5rem 0 1.5rem 3rem;
+	font-size: 90%;
+}
+.editor-styles-wrapper dt {
+	font-weight: bold;
+}
+.editor-styles-wrapper dd {
+	margin: 0 1.5em 1.5em;
+}
+.editor-styles-wrapper table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+.editor-styles-wrapper table th,
+.editor-styles-wrapper table td {
+	padding: 1.2rem 1.5rem;
+	text-align: left;
+	border-bottom: 1px solid var(--color-light-grey);
+}
+.editor-styles-wrapper table th:first-child, .editor-styles-wrapper table th:first-child,
+.editor-styles-wrapper table td:first-child,
+.editor-styles-wrapper table td:first-child {
+	padding-left: 0;
+}
+.editor-styles-wrapper table th:last-child, .editor-styles-wrapper table th:last-child,
+.editor-styles-wrapper table td:last-child,
+.editor-styles-wrapper table td:last-child {
+	padding-right: 0;
 }
 .editor-styles-wrapper .wp-block-audio {
 	margin: 0;
@@ -275,6 +466,9 @@
 .editor-styles-wrapper .wp-block-image.is-resized img {
 	max-width: none;
 }
+.editor-styles-wrapper .wp-block-image figcaption {
+	margin: 0.25em 0;
+}
 .editor-styles-wrapper .wp-block-latest-posts.is-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -472,9 +666,6 @@
 }
 .editor-styles-wrapper .has-regular-font-size {
 	font-size: 16px;
-}
-.editor-styles-wrapper .has-medium-font-size {
-	font-size: 24px;
 }
 .editor-styles-wrapper .has-large-font-size {
 	font-size: 36px;

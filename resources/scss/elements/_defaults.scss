@@ -6,13 +6,55 @@
 /// @link   https://retrofitter.dk
 ////
 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
 // Body styles. Note that we're hiding horizontal overflow so that wide images
 // don't overflow.
 body {
 	overflow-x: hidden;
 	margin: 0;
+	background-color: var(--color-white);
 }
-h1 {
-	font-family: var(--font-secondary);
-	@include font-size(font-value(large));
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: var(--color-black);
+	font-family: var(--font-primary);
+	line-height: var(--lineheight-body);
+	@include font-size(font-value(regular));
+	@media (min-width: break(small)) {
+		@include font-size(17);
+	}	
+	@media (min-width: break(medium)) {
+		@include font-size(18);
+	}
+}
+
+hr {
+	background-color: var(--color-light-grey);
+	border: 0;
+	height: 1px;
+	margin-top: 3rem;
+	margin-bottom: 3.5rem;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: .5rem 0; /* Extra wide images within figure tags don't overflow the content area. */
 }

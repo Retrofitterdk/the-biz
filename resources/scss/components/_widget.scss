@@ -7,7 +7,7 @@
 ////
 
 .widget {
-
+	margin: 0 0 1.5em;
 	// Core widgets.
 	&--archives {}
 	&--calendar {}
@@ -29,4 +29,8 @@
 
 	// Widget titles.
 	&__title {}
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	}
 }
