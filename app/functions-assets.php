@@ -41,6 +41,9 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Enqueue theme styles.
 	wp_enqueue_style( 'the-biz-screen', asset( 'css/screen.css' ), null, null );
 
+	// Enqueue fonts styles.
+	wp_enqueue_style( 'the-biz-fonts', asset( 'fonts/fonts.css' ), null, null );
+
 } );
 
 /**
