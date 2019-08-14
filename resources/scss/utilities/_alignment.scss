@@ -50,3 +50,12 @@
 	width:        auto;
 	max-width:    100vw;
 }
+
+@media ( min-width: break( medium ) ) {
+	.two-columns.has-sidebar {
+		.alignwide, .alignfull {
+			width: 100%;
+		}
+	}
+}
+

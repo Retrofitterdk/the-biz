@@ -400,6 +400,11 @@
 	width: auto;
 	max-width: 100vw;
 }
+@media (min-width: 880px) {
+	.editor-styles-wrapper .two-columns.has-sidebar .alignwide, .editor-styles-wrapper .two-columns.has-sidebar .alignfull {
+		width: 100%;
+	}
+}
 .editor-styles-wrapper .has-primary-color {
 	color: #d32f2f;
 }

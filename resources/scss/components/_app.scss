@@ -14,12 +14,7 @@
     padding: 0 20px;
     @media ( min-width: break( medium ) ) {
         padding: 0 40px;
-    }
-}
-
-@media ( min-width: break( medium ) ) {
-    .two-columns.has-sidebar {
-        .app {
+        .two-columns.has-sidebar & {
             &-content {
                 display: flex;
             }

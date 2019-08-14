@@ -11,6 +11,9 @@
 		margin: 0 auto;
 		@media (min-width: break( medium ) ) {
 			width: 74.1%;
+	        .two-columns.has-sidebar & {
+				width: 100%;
+			}
 		}
 	}
 	// Type of entry/post.
@@ -36,10 +39,15 @@
 			margin: 0 auto;
 			@media (min-width: break( small ) ) {
 				width: 65%;
+				.two-columns.has-sidebar & {
+					width: 73.7%;
+				}
 			}
-			// @media (min-width: break( medium ) ) {
-			// 	width: 48.3%;
-			// }
+			@media (min-width: break( medium ) ) {
+				.two-columns.has-sidebar & {
+					margin: 0;
+				}
+			}
 		}
 	}
 
@@ -59,4 +67,5 @@
 	&__comments {}
 
 	&__terms {}
+
 }
