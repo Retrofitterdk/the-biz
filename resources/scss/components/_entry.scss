@@ -7,7 +7,12 @@
 ////
 
 .entry {
-
+	> * {
+		margin: 0 auto;
+		@media (min-width: break( medium ) ) {
+			width: 74.1%;
+		}
+	}
 	// Type of entry/post.
 	&--type-post {}
 
@@ -26,7 +31,17 @@
 	&__title {}
 
 	// Full entry content.
-	&__content {}
+	&__content {
+		> * {
+			margin: 0 auto;
+			@media (min-width: break( small ) ) {
+				width: 65%;
+			}
+			// @media (min-width: break( medium ) ) {
+			// 	width: 48.3%;
+			// }
+		}
+	}
 
 	// Summary/Excerpt.
 	&__summary {}
