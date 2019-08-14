@@ -1,3 +1,6 @@
+.editor-styles-wrapper {
+	/* Do not show the outline on the skip link target. */
+}
 .editor-styles-wrapper body {
 	overflow-x: hidden;
 	margin: 0;
@@ -346,27 +349,33 @@
 	opacity: 0.75;
 }
 .editor-styles-wrapper .screen-reader-text {
+	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	-webkit-clip-path: inset(50%);
 	        clip-path: inset(50%);
-	position: absolute;
+	position: absolute !important;
 	width: 1px;
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
-	word-wrap: normal;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 	border: none;
 }
 .editor-styles-wrapper .screen-reader-text:active, .editor-styles-wrapper .screen-reader-text:focus {
-	clip: auto;
+	clip: auto !important;
 	-webkit-clip-path: none;
 	        clip-path: none;
 	display: block;
 	height: auto;
 	width: auto;
 	z-index: 100000;
+	/* Above WP toolbar. */
 	text-decoration: none;
+}
+.editor-styles-wrapper #content[tabindex="-1"]:focus {
+	outline: 0;
 }
 @media (min-width: 600px) {
 	.editor-styles-wrapper .alignleft {
