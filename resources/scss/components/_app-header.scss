@@ -7,22 +7,61 @@
 ////
 
 .app-header {
+	display: flex;
+	justify-content: space-between;
 
 	// Wrapper around the title and description.
 	&__branding {}
+
+	// Wrapper around the menu area.
+	&__navigation {}
 
 	// Output from the `custom-logo` feature.
 	&__logo {}
 
 	// Logo link.
-	&__logo-link {}
+	&__logo-link {
+		display: inline-block;
+	}
 
 	// The site title.
-	&__title {}
+	&__title {
+		display: inline-block;
+		text-transform: lowercase;
+	}
 
 	// Site title link.
-	&__title-link {}
+	&__title-link {
+		display: inline-block;
+		text-decoration: none;
+		color: var(--color-black);
+		@include font-size(22);
+		line-height: 3rem;
+		&:visited,
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--color-black);
+		}
+		& .first {
+			font-family: var(--font-secondary);
+		}
+		& .divider {
+			color: var(--color-primary);
+			font-family: "Finicon";
+			vertical-align: bottom;
+			letter-spacing: -.35em;
+			margin-left: -.35em;
+		}
+		& .last {
+			font-weight: bold;
+			font-family: var(--font-primary);
+		}
+	}
 
 	// The site description.
-	&__description {}
+	&__description {
+		display: inline-block;
+		margin: 0 1rem;
+	}
 }

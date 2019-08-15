@@ -16,28 +16,16 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include font-size(font-value(larger));
-    .single & {
-    @include font-size(font-value(large));
-    }
 }
 
 h2 {
     @include font-size(font-value(large));
-    .single & {
-    @include font-size(font-value(medium));
-    }
 }
 
 h3 {
     @include font-size(font-value(medium));
-    .single & {
-    @include font-size(font-value(regular));
-    }
 }
 
 h4,h5,h6 {
     @include font-size(font-value(regular));
-    .single & {
-    @include font-size(font-value(regular));
-    }
 }

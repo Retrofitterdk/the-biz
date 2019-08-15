@@ -9,17 +9,124 @@
 .menu {
 
 	// Specific nav menus.
-	&--primary {}
-
+	&--primary {
+		position: absolute;
+		top:0;
+		right: -16rem;
+		width: 16rem;
+		height: 100%;
+		overflow-y: scroll;
+		overflow-x: visible;
+		transition: left 0.3s ease;
+		z-index: 999;
+		background: var(--color-primary);
+		color: var(--color-white);
+		&[aria-expanded="true"],
+		&:target {
+			right: 0;
+			box-shadow: 0.25rem 0 1rem rgba(0,0,0,.25);
+			+ .backdrop {
+				position: absolute;
+				display: block;
+				content: "";
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 998;
+				background: #000;
+				background: rgba(0,0,0,.75);
+				cursor: default;
+			}
+		}
+		a {
+			color: var(--color-white);
+			@include font-size(17);
+			&:visited,
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-white);
+			}
+		}
+		li {
+			margin: 0;
+			> ul {
+				margin:0;
+				font-size: 100%
+			}
+		}
+		> ul {
+			padding: 0 1.6rem;
+			> li {
+				margin-top: 1rem;
+				> a {
+					font-weight: bolder;
+					text-transform: uppercase;
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					width: 40px;
+					border-top: 2px solid var(--color-white);
+				}
+			}
+		}
+	}
 	// Menu title.
-	&__title {}
+	&__title {
+		@include font-size(20);
+		line-height: 3rem;
+		font-weight: bolder;
+		a {
+			color: var(--color-primary);
+			text-decoration: none;
+			&:visited,
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-primary);
+			}
+			&:after {
+				content: "=";
+				font-family: "Finicon";
+				vertical-align: middle;
+				@include font-size(32);
+				letter-spacing: .3rem;
+			}
+		}
+		nav & {
+			a {
+				&.menu-toggle {
+					color: var(--color-white);
+					padding: 0 1rem;
+				}
+				&:before {
+					content: "x";
+					font-family: "Finicon";
+					vertical-align: middle;
+					@include font-size(32);
+					letter-spacing: .3rem;
+				}
+				&:after {
+					content: "";
+				}
 
+			}
+		}
+	}
 	// Menu items list.
-	&__items {}
+	&__items {
+		list-style: none;
+		margin: 0 0 2rem 0;
+		padding-left: 0;
+	}
 
 	// Individual items.
 	&__item {}
 
 	// Item link.
-	&__link {}
+	&__link {
+		text-decoration: none;
+	}
 }

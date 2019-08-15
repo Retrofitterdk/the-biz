@@ -468,34 +468,18 @@ h1 {
 	font-size: 48px;
 	font-size: 3rem;
 }
-.single h1 {
-	font-size: 36px;
-	font-size: 2.25rem;
-}
 
 h2 {
 	font-size: 36px;
 	font-size: 2.25rem;
-}
-.single h2 {
-	font-size: 24px;
-	font-size: 1.5rem;
 }
 
 h3 {
 	font-size: 24px;
 	font-size: 1.5rem;
 }
-.single h3 {
-	font-size: 16px;
-	font-size: 1rem;
-}
 
 h4, h5, h6 {
-	font-size: 16px;
-	font-size: 1rem;
-}
-.single h4, .single h5, .single h6 {
 	font-size: 16px;
 	font-size: 1rem;
 }
@@ -774,6 +758,52 @@ input[type=submit]:focus {
 	}
 }
 
+.app-header {
+	display: flex;
+	justify-content: space-between;
+}
+.app-header__logo-link {
+	display: inline-block;
+}
+.app-header__title {
+	display: inline-block;
+	text-transform: lowercase;
+}
+.app-header__title-link {
+	display: inline-block;
+	text-decoration: none;
+	color: #212121;
+	color: var(--color-black);
+	font-size: 22px;
+	font-size: 1.375rem;
+	line-height: 3rem;
+}
+.app-header__title-link:visited, .app-header__title-link:hover, .app-header__title-link:focus, .app-header__title-link:active {
+	color: #212121;
+	color: var(--color-black);
+}
+.app-header__title-link .first {
+	font-family: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: var(--font-secondary);
+}
+.app-header__title-link .divider {
+	color: #d32f2f;
+	color: var(--color-primary);
+	font-family: "Finicon";
+	vertical-align: bottom;
+	letter-spacing: -0.35em;
+	margin-left: -0.35em;
+}
+.app-header__title-link .last {
+	font-weight: bold;
+	font-family: PT Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: var(--font-primary);
+}
+.app-header__description {
+	display: inline-block;
+	margin: 0 1rem;
+}
+
 .comment__content a {
 	word-wrap: break-word;
 }
@@ -791,6 +821,18 @@ input[type=submit]:focus {
 	.two-columns.has-sidebar .entry > * {
 		width: 100%;
 	}
+}
+.single .entry h1 {
+	font-size: 36px;
+	font-size: 2.25rem;
+}
+.single .entry h2 {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+.single .entry h3, .single .entry h4, .single .entry h5, .single .entry h6 {
+	font-size: 16px;
+	font-size: 1rem;
 }
 .entry__content > * {
 	margin: 0 auto;
@@ -859,6 +901,120 @@ input[type=submit]:focus {
 	display: block;
 }
 
+.menu--primary {
+	position: absolute;
+	top: 0;
+	right: -16rem;
+	width: 16rem;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: visible;
+	transition: left 0.3s ease;
+	z-index: 999;
+	background: #d32f2f;
+	background: var(--color-primary);
+	color: #ffffff;
+	color: var(--color-white);
+}
+.menu--primary[aria-expanded=true], .menu--primary:target {
+	right: 0;
+	box-shadow: 0.25rem 0 1rem rgba(0, 0, 0, 0.25);
+}
+.menu--primary[aria-expanded=true] + .backdrop, .menu--primary:target + .backdrop {
+	position: absolute;
+	display: block;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+	background: #000;
+	background: rgba(0, 0, 0, 0.75);
+	cursor: default;
+}
+.menu--primary a {
+	color: #ffffff;
+	color: var(--color-white);
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+.menu--primary a:visited, .menu--primary a:hover, .menu--primary a:focus, .menu--primary a:active {
+	color: #ffffff;
+	color: var(--color-white);
+}
+.menu--primary li {
+	margin: 0;
+}
+.menu--primary li > ul {
+	margin: 0;
+	font-size: 100%;
+}
+.menu--primary > ul {
+	padding: 0 1.6rem;
+}
+.menu--primary > ul > li {
+	margin-top: 1rem;
+}
+.menu--primary > ul > li > a {
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+.menu--primary > ul > li:before {
+	content: "";
+	position: absolute;
+	width: 40px;
+	border-top: 2px solid #ffffff;
+	border-top: 2px solid var(--color-white);
+}
+.menu__title {
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 3rem;
+	font-weight: bolder;
+}
+.menu__title a {
+	color: #d32f2f;
+	color: var(--color-primary);
+	text-decoration: none;
+}
+.menu__title a:visited, .menu__title a:hover, .menu__title a:focus, .menu__title a:active {
+	color: #d32f2f;
+	color: var(--color-primary);
+}
+.menu__title a:after {
+	content: "=";
+	font-family: "Finicon";
+	vertical-align: middle;
+	font-size: 32px;
+	font-size: 2rem;
+	letter-spacing: 0.3rem;
+}
+nav .menu__title a.menu-toggle {
+	color: #ffffff;
+	color: var(--color-white);
+	padding: 0 1rem;
+}
+nav .menu__title a:before {
+	content: "x";
+	font-family: "Finicon";
+	vertical-align: middle;
+	font-size: 32px;
+	font-size: 2rem;
+	letter-spacing: 0.3rem;
+}
+nav .menu__title a:after {
+	content: "";
+}
+.menu__items {
+	list-style: none;
+	margin: 0 0 2rem 0;
+	padding-left: 0;
+}
+.menu__link {
+	text-decoration: none;
+}
+
 @media (min-width: 880px) {
 	.two-columns.has-sidebar .sidebar--primary {
 		width: 31%;
@@ -866,6 +1022,13 @@ input[type=submit]:focus {
 }
 .widget {
 	margin: 0 0 1.5em;
+}
+.widget--calendar {
+	overflow: scroll;
+	max-width: 100%;
+}
+.widget--calendar td, .widget--calendar th {
+	padding: 0.5rem;
 }
 .widget select {
 	max-width: 100%;
@@ -1494,5 +1657,21 @@ input[type=button].button-primary:focus {
 .page-links {
 	clear: both;
 	margin: 0;
+}
+
+.menu__title a, .app-header__description {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	border: none;
 }
 /*# sourceMappingURL=screen.css.map*/

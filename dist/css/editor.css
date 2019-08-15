@@ -98,31 +98,15 @@
 	font-size: 48px;
 	font-size: 3rem;
 }
-.single .editor-styles-wrapper h1 {
-	font-size: 36px;
-	font-size: 2.25rem;
-}
 .editor-styles-wrapper h2 {
 	font-size: 36px;
 	font-size: 2.25rem;
-}
-.single .editor-styles-wrapper h2 {
-	font-size: 24px;
-	font-size: 1.5rem;
 }
 .editor-styles-wrapper h3 {
 	font-size: 24px;
 	font-size: 1.5rem;
 }
-.single .editor-styles-wrapper h3 {
-	font-size: 16px;
-	font-size: 1rem;
-}
 .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6 {
-	font-size: 16px;
-	font-size: 1rem;
-}
-.single .editor-styles-wrapper h4, .single .editor-styles-wrapper h5, .single .editor-styles-wrapper h6 {
 	font-size: 16px;
 	font-size: 1rem;
 }
@@ -894,5 +878,20 @@
 .editor-styles-wrapper .page-links {
 	clear: both;
 	margin: 0;
+}
+.editor-styles-wrapper .menu__title a, .editor-styles-wrapper .app-header__description {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	border: none;
 }
 /*# sourceMappingURL=editor.css.map*/
