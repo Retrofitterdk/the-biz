@@ -595,6 +595,175 @@ table td:last-child {
 	padding-right: 0;
 }
 
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
+textarea,
+select {
+	height: 3.8rem;
+	padding: 0.6rem 10rem;
+	/* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: #ffffff;
+	background-color: var(--color-white);
+	box-shadow: none;
+	box-sizing: border-box;
+	color: #212121;
+	color: var(--color-black);
+	border: 1px solid #bdbdbd;
+	border: 1px solid var(--color-light-grey);
+	border-radius: 3px;
+	padding: 3px;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
+textarea:focus,
+select:focus {
+	color: #212121;
+	color: var(--color-black);
+	outline: 0;
+}
+
+select {
+	border: 1px solid #bdbdbd;
+	border: 1px solid var(--color-light-grey);
+}
+
+textarea {
+	width: 100%;
+	min-height: 6.5rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+}
+
+label,
+legend {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+
+fieldset {
+	padding: 0;
+	border-width: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	display: inline;
+}
+
+.button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	display: inline-block;
+	height: 3.8rem;
+	padding: 0 3rem;
+	color: #212121;
+	color: var(--color-black);
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 3.8rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	cursor: pointer;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+	border-radius: 3px;
+	background: #e9e9e9;
+	background: var(--color-secondary);
+	font-size: 12px;
+	font-size: 0.75rem;
+}
+.button:hover,
+button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+}
+.button:active, .button:focus,
+button:active,
+button:focus,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=reset]:active,
+input[type=reset]:focus,
+input[type=submit]:active,
+input[type=submit]:focus {
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+}
+
+.button.button-primary,
+button.button-primary,
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
+	color: #ffffff;
+	color: var(--color-white);
+	background-color: #d32f2f;
+	background-color: var(--color-primary);
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+}
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover {
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+}
+.button.button-primary:active, .button.button-primary:focus,
+button.button-primary:active,
+button.button-primary:focus,
+input[type=submit].button-primary:active,
+input[type=submit].button-primary:focus,
+input[type=reset].button-primary:active,
+input[type=reset].button-primary:focus,
+input[type=button].button-primary:active,
+input[type=button].button-primary:focus {
+	border-color: #bdbdbd;
+	border-color: var(--color-light-grey);
+}
+
 .app {
 	max-width: 1240px;
 	margin: 0 auto;

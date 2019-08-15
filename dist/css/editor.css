@@ -201,6 +201,152 @@
 .editor-styles-wrapper table td:last-child {
 	padding-right: 0;
 }
+.editor-styles-wrapper input[type=text],
+.editor-styles-wrapper input[type=email],
+.editor-styles-wrapper input[type=url],
+.editor-styles-wrapper input[type=password],
+.editor-styles-wrapper input[type=search],
+.editor-styles-wrapper input[type=number],
+.editor-styles-wrapper input[type=tel],
+.editor-styles-wrapper input[type=range],
+.editor-styles-wrapper input[type=date],
+.editor-styles-wrapper input[type=month],
+.editor-styles-wrapper input[type=week],
+.editor-styles-wrapper input[type=time],
+.editor-styles-wrapper input[type=datetime],
+.editor-styles-wrapper input[type=datetime-local],
+.editor-styles-wrapper input[type=color],
+.editor-styles-wrapper textarea,
+.editor-styles-wrapper select {
+	height: 3.8rem;
+	padding: 0.6rem 10rem;
+	/* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: var(--color-white);
+	box-shadow: none;
+	box-sizing: border-box;
+	color: var(--color-black);
+	border: 1px solid var(--color-light-grey);
+	border-radius: 3px;
+	padding: 3px;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+}
+.editor-styles-wrapper input[type=text]:focus,
+.editor-styles-wrapper input[type=email]:focus,
+.editor-styles-wrapper input[type=url]:focus,
+.editor-styles-wrapper input[type=password]:focus,
+.editor-styles-wrapper input[type=search]:focus,
+.editor-styles-wrapper input[type=number]:focus,
+.editor-styles-wrapper input[type=tel]:focus,
+.editor-styles-wrapper input[type=range]:focus,
+.editor-styles-wrapper input[type=date]:focus,
+.editor-styles-wrapper input[type=month]:focus,
+.editor-styles-wrapper input[type=week]:focus,
+.editor-styles-wrapper input[type=time]:focus,
+.editor-styles-wrapper input[type=datetime]:focus,
+.editor-styles-wrapper input[type=datetime-local]:focus,
+.editor-styles-wrapper input[type=color]:focus,
+.editor-styles-wrapper textarea:focus,
+.editor-styles-wrapper select:focus {
+	color: var(--color-black);
+	outline: 0;
+}
+.editor-styles-wrapper select {
+	border: 1px solid var(--color-light-grey);
+}
+.editor-styles-wrapper textarea {
+	width: 100%;
+	min-height: 6.5rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+}
+.editor-styles-wrapper label,
+.editor-styles-wrapper legend {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+.editor-styles-wrapper fieldset {
+	padding: 0;
+	border-width: 0;
+}
+.editor-styles-wrapper input[type=checkbox],
+.editor-styles-wrapper input[type=radio] {
+	display: inline;
+}
+.editor-styles-wrapper .button,
+.editor-styles-wrapper button,
+.editor-styles-wrapper input[type=button],
+.editor-styles-wrapper input[type=reset],
+.editor-styles-wrapper input[type=submit] {
+	display: inline-block;
+	height: 3.8rem;
+	padding: 0 3rem;
+	color: var(--color-black);
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 3.8rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	cursor: pointer;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: var(--color-light-grey);
+	border-radius: 3px;
+	background: var(--color-secondary);
+	font-size: 12px;
+	font-size: 0.75rem;
+}
+.editor-styles-wrapper .button:hover,
+.editor-styles-wrapper button:hover,
+.editor-styles-wrapper input[type=button]:hover,
+.editor-styles-wrapper input[type=reset]:hover,
+.editor-styles-wrapper input[type=submit]:hover {
+	border-color: var(--color-light-grey);
+}
+.editor-styles-wrapper .button:active, .editor-styles-wrapper .button:focus,
+.editor-styles-wrapper button:active,
+.editor-styles-wrapper button:focus,
+.editor-styles-wrapper input[type=button]:active,
+.editor-styles-wrapper input[type=button]:focus,
+.editor-styles-wrapper input[type=reset]:active,
+.editor-styles-wrapper input[type=reset]:focus,
+.editor-styles-wrapper input[type=submit]:active,
+.editor-styles-wrapper input[type=submit]:focus {
+	border-color: var(--color-light-grey);
+}
+.editor-styles-wrapper .button.button-primary,
+.editor-styles-wrapper button.button-primary,
+.editor-styles-wrapper input[type=submit].button-primary,
+.editor-styles-wrapper input[type=reset].button-primary,
+.editor-styles-wrapper input[type=button].button-primary {
+	color: var(--color-white);
+	background-color: var(--color-primary);
+	border-color: var(--color-light-grey);
+}
+.editor-styles-wrapper .button.button-primary:hover,
+.editor-styles-wrapper button.button-primary:hover,
+.editor-styles-wrapper input[type=submit].button-primary:hover,
+.editor-styles-wrapper input[type=reset].button-primary:hover,
+.editor-styles-wrapper input[type=button].button-primary:hover {
+	border-color: var(--color-light-grey);
+}
+.editor-styles-wrapper .button.button-primary:active, .editor-styles-wrapper .button.button-primary:focus,
+.editor-styles-wrapper button.button-primary:active,
+.editor-styles-wrapper button.button-primary:focus,
+.editor-styles-wrapper input[type=submit].button-primary:active,
+.editor-styles-wrapper input[type=submit].button-primary:focus,
+.editor-styles-wrapper input[type=reset].button-primary:active,
+.editor-styles-wrapper input[type=reset].button-primary:focus,
+.editor-styles-wrapper input[type=button].button-primary:active,
+.editor-styles-wrapper input[type=button].button-primary:focus {
+	border-color: var(--color-light-grey);
+}
 .editor-styles-wrapper .wp-block-audio {
 	margin: 0;
 }
