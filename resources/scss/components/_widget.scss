@@ -10,7 +10,13 @@
 	margin: 0 0 1.5em;
 	// Core widgets.
 	&--archives {}
-	&--calendar {}
+	&--calendar {
+		overflow: scroll;
+		max-width: 100%;
+		td,th {
+			padding: .5rem;
+		}
+	}
 	&--categories {}
 	&--custom-html {}
 	&--media-audio {}
