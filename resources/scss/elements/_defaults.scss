@@ -20,7 +20,6 @@ html {
 // don't overflow.
 body {
 	overflow-x: hidden;
-	margin: 0;
 	background-color: var(--color-white);
 }
 
@@ -55,6 +54,33 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
 figure {
 	margin: .5rem 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+a {
+	color: var(--color-primary);
+
+	&:visited {
+		color: var(--color-grey);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-red);
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
 }

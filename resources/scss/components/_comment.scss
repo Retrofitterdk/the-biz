@@ -19,7 +19,11 @@
 	&--status-unapproved {}
 
 	// Full comment text/content.
-	&__content {}
+	&__content {
+		a {
+			word-wrap: break-word;
+		}
+	}
 
 	// Comment under moderation message.
 	&__moderation {}
@@ -41,4 +45,8 @@
 	&__edit {}
 
 	&__reply {}
+}
+
+.bypostauthor {
+	display: block;
 }

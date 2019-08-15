@@ -101,20 +101,3 @@ input[type="submit"] {
 		border-color: var(--color-light-grey);
 	}
 }
-
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
-	color: var(--color-white);
-	background-color: var(--color-primary);
-	border-color: var(--color-light-grey);
-	&:hover {
-		border-color: var(--color-light-grey);
-	}
-	&:active,
-	&:focus {
-		border-color: var(--color-light-grey);
-	}
-}

@@ -1,0 +1,24 @@
+////
+/// Clearing classes.
+///
+///
+/// @group  Utilities
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+.clear:before,
+.clear:after,
+.container:before,
+.container:after,
+.row:before,
+.row:after,
+.widget:before,
+.widget:after {
+	@include clearfix;
+}
+
+.clear:after,
+.widget:after {
+	@include clearfix-after;
+}

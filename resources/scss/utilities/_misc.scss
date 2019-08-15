@@ -1,0 +1,23 @@
+////
+/// Misc. utility styles.
+///
+/// @group  Utilities
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+.no-scroll {
+  overflow: hidden;
+}
+.sticky {
+	display: block;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-links {
+	clear: both;
+	margin: 0;
+}

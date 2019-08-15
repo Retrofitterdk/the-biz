@@ -1,0 +1,24 @@
+////
+/// User input styles.
+///
+/// @group  Utilities
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+	color: var(--color-white);
+	background-color: var(--color-primary);
+	border-color: var(--color-light-grey);
+	&:hover {
+		border-color: var(--color-light-grey);
+	}
+	&:active,
+	&:focus {
+		border-color: var(--color-light-grey);
+	}
+}

@@ -7,18 +7,28 @@
 ////
 
 .gallery {
-
-	@media ( min-width: break-small() ) {
+	margin-bottom: 1.5em;
+	@media ( min-width: break(small)) {
 
 		@for $i from 1 through 10 {
 
-			&-columns-#{ $i } &-item {}
+			&-columns-#{ $i } &-item {
+				max-width: map-get( $columns, $i );
+			}
 		}
+	}
+	&-item {
+		display: inline-block;
+		text-align: center;
+		vertical-align: top;
+		width: 100%;
 	}
 
 	&-icon {
 		img {}
 	}
 
-	&-caption {}
+	&-caption {
+		display: block;
+	}
 }
