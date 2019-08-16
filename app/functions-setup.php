@@ -75,11 +75,11 @@ add_action( 'after_setup_theme', function() {
 
 	// Add custom logo support.
 	add_theme_support( 'custom-logo', [
-		'width'       => null,
-		'height'      => null,
-		'flex-width'  => null,
-		'flex-height' => false,
-		'header-text' => ''
+		'width'       => 185,
+		'height'      => 50,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => 'app-header__title'
 	] );
 	// Disable custom colors in block Color Palettes
 	add_theme_support( 'disable-custom-colors' );
@@ -237,6 +237,7 @@ add_action( 'init', function() {
 
 	register_nav_menus( [
 		'primary' => esc_html_x( 'Primary', 'nav menu location', 'the-biz' ),
+		'featured' => esc_html_x( 'Featured', 'nav menu location', 'the-biz' ),
 		'social'  => esc_html_x( 'Social menu', 'nav menu location', 'the-biz')
 	] );
 
@@ -257,12 +258,24 @@ add_action( 'init', function() {
 add_action( 'init', function() {
 
 	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 178, 100, true );
+	set_post_thumbnail_size( 560, 560, true );
 
 	// Register custom image sizes.
-	add_image_size( 'the-biz-medium', 750, 422, true );
+	add_image_size( 'widget', 360, 360 );
+	add_image_size( 'content', 880, 880 );
+	add_image_size( 'wide', 1600, 1600 );
 
 }, 5 );
+
+function choose_new_image_sizes($sizes) {
+    return array_merge( $sizes, array(
+		'widget' => __('Widget', 'the-biz'),
+		'content' => __('Content width', 'the-biz'),
+        'wide' => __('Wide', 'the-biz' ),
+    ) );
+}
+add_filter( 'image_size_names_choose', __NAMESPACE__ . '\choose_new_image_sizes' );
+
 
 /**
  * Register sidebars.
@@ -324,12 +337,18 @@ function headerAttr(  $attr, $context ) {
 	}
 
 	$logoalignment = get_theme_mod( 'app_header_alignment' );
+	$onlysitetitle = get_theme_mod( 'show_only_sitetitle' );
+	$onlysitedesc = get_theme_mod( 'show_only_sitedescription' );
 
-	if ( ! $logoalignment ) {
-		return $attr;
+	if ( $logoalignment ) {
+		$attr['class'] .= sprintf(' ' . $logoalignment);
 	}
-
-	$attr['class'] .= sprintf(' ' . $logoalignment);
+	if ( $onlysitetitle ) {
+		$attr['class'] .= ' show-only-title';
+	}
+	if ( $onlysitedesc ) {
+		$attr['class'] .= ' show-only-description';
+	}
 	return $attr;
 }
 
