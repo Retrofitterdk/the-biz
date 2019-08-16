@@ -879,19 +879,4 @@
 	clear: both;
 	margin: 0;
 }
-.editor-styles-wrapper .menu__title a, .editor-styles-wrapper .app-header__description {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	        clip-path: inset(50%);
-	position: absolute !important;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	word-wrap: normal !important;
-	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
-	border: none;
-}
 /*# sourceMappingURL=editor.css.map*/

@@ -11,7 +11,11 @@
 	justify-content: space-between;
 
 	// Wrapper around the title and description.
-	&__branding {}
+	&__branding {
+		.logoright & {
+			order: 2;	
+		}
+	}
 
 	// Wrapper around the menu area.
 	&__navigation {}
@@ -22,12 +26,29 @@
 	// Logo link.
 	&__logo-link {
 		display: inline-block;
+		max-width: 185px;
+		max-height: 50px;
 	}
 
 	// The site title.
 	&__title {
 		display: inline-block;
 		text-transform: lowercase;
+		@include font-size(22);
+		line-height: 3rem;
+		.show-only-description & {
+			border: 0;
+			clip:      rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
+			position: absolute !important;
+			width:     1px;
+			height:    1px;
+			margin:    -1px;
+			overflow:  hidden;
+			padding:   0;
+			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+			border:    none;
+		}
 	}
 
 	// Site title link.
@@ -35,8 +56,6 @@
 		display: inline-block;
 		text-decoration: none;
 		color: var(--color-black);
-		@include font-size(22);
-		line-height: 3rem;
 		&:visited,
 		&:hover,
 		&:focus,
@@ -45,6 +64,7 @@
 		}
 		& .first {
 			font-family: var(--font-secondary);
+			font-weight: normal;
 		}
 		& .divider {
 			color: var(--color-primary);
@@ -62,6 +82,32 @@
 	// The site description.
 	&__description {
 		display: inline-block;
-		margin: 0 1rem;
+		margin: 0 0 0 1rem;
+		@media ( max-width: break( medium ) ) {
+			border: 0;
+			clip:      rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
+			position: absolute !important;
+			width:     1px;
+			height:    1px;
+			margin:    -1px;
+			overflow:  hidden;
+			padding:   0;
+			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+			border:    none;
+		}
+		.show-only-title & {
+			border: 0;
+			clip:      rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
+			position: absolute !important;
+			width:     1px;
+			height:    1px;
+			margin:    -1px;
+			overflow:  hidden;
+			padding:   0;
+			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+			border:    none;
+		}
 	}
 }

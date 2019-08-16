@@ -21,10 +21,12 @@
 		z-index: 999;
 		background: var(--color-primary);
 		color: var(--color-white);
+		padding: 0 1.6rem;
 		&[aria-expanded="true"],
 		&:target {
 			right: 0;
 			box-shadow: 0.25rem 0 1rem rgba(0,0,0,.25);
+			position: fixed;
 			+ .backdrop {
 				position: absolute;
 				display: block;
@@ -37,6 +39,13 @@
 				background: #000;
 				background: rgba(0,0,0,.75);
 				cursor: default;
+			}
+		}
+		.logoright & {
+			&[aria-expanded="true"],
+			&:target {
+				left: 0;
+				right: unset;
 			}
 		}
 		a {
@@ -57,7 +66,6 @@
 			}
 		}
 		> ul {
-			padding: 0 1.6rem;
 			> li {
 				margin-top: 1rem;
 				> a {
@@ -87,31 +95,62 @@
 			&:active {
 				color: var(--color-primary);
 			}
-			&:after {
-				content: "=";
+			&:after,&:before {
+				content: "";
 				font-family: "Finicon";
 				vertical-align: middle;
 				@include font-size(32);
 				letter-spacing: .3rem;
+			}
+			&:after {
+				content: "=";
+			}
+			.logoright & {
+				&:before {
+					content: "=";
+				}
+				&:after {
+					content: "";
+				}
+			}
+			span {
+				@media ( max-width: break( small ) ) {
+					border: 0;
+					clip:      rect( 1px, 1px, 1px, 1px );
+					clip-path: inset( 50% );
+					position: absolute !important;
+					width:     1px;
+					height:    1px;
+					margin:    -1px;
+					overflow:  hidden;
+					padding:   0;
+					word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+					border:    none;
+				}
 			}
 		}
 		nav & {
 			a {
 				&.menu-toggle {
 					color: var(--color-white);
-					padding: 0 1rem;
 				}
 				&:before {
 					content: "x";
-					font-family: "Finicon";
-					vertical-align: middle;
-					@include font-size(32);
-					letter-spacing: .3rem;
 				}
 				&:after {
 					content: "";
 				}
-
+			}
+			.logoright & {
+				a {
+					float: right;
+					&:before {
+						content: "";
+					}
+					&:after {
+						content: "x";
+					}
+				}
 			}
 		}
 	}
