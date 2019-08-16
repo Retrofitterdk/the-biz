@@ -101,7 +101,19 @@ class Customize implements Bootable {
 			$setting->transport = 'postMessage';
 		} );
 
-		// Register footer settings.
+		// Register the site title/site description settings.
+		$manager->add_setting( 'show_only_sitetitle', [
+			'default'           => false,
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'postMessage'
+		] );
+		$manager->add_setting( 'show_only_sitedescription', [
+			'default'           => false,
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'postMessage'
+		] );
+
+		// Register the column/grid settings.
 		$manager->add_setting( 'two_column_grid', [
 			'default'           => false,
 			'sanitize_callback' => 'wp_validate_boolean',
@@ -127,16 +139,31 @@ class Customize implements Bootable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
-		// Register the footer controls.
+		// Register the site title/site description controls.
+		$manager->add_control( 'show_only_sitetitle', [
+			'label'    		=> __( 'Show only site title, not site description .', 'the-biz' ),
+			'section'  		=> 'title_tagline',
+            'settings'      => 'show_only_sitetitle',
+			'type'     		=> 'checkbox',
+			'priority'      => 45
+		] );
+		$manager->add_control( 'show_only_sitedescription', [
+			'label'    		=> __( 'Show only site description, not site title .', 'the-biz' ),
+			'section'  		=> 'title_tagline',
+            'settings'      => 'show_only_sitedescription',
+			'type'     		=> 'checkbox',
+			'priority'      => 50
+		] );
+
+		// Register the column/grid controls.
 		$manager->add_control( 'two_column_grid', [
 			'label'    		=> __( 'Use two column grid in desktop view, when sidebar is active.', 'the-biz' ),
 			'section'  		=> 'layout',
             'settings'      => 'two_column_grid',
 			'type'     		=> 'checkbox',
 			'priority'      => 10
-
-
 		] );
+
 		// Register the logo alignment control.
 		$manager->add_control( 'app_header_alignment', [
             'label'         => __( 'Logo alignment', 'the-biz' ),
