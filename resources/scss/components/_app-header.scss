@@ -7,18 +7,141 @@
 ////
 
 .app-header {
-	display: flex;
-	justify-content: space-between;
+	height: 4rem;
+	// Backdrop when menu is open
+	.no-scroll & {
+		position: fixed;
+		width: 100%;
+		background: var(--color-white);
+		left: 0;
+	}
+
+	// Wrapper around the header content.
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		.no-scroll & {
+			max-width: 1240px;
+			margin: 0 auto;
+			padding: 0 20px;
+			@media ( min-width: break( medium ) ) {
+				padding: 0 40px;
+			}
+		}
+	}
 
 	// Wrapper around the title and description.
 	&__branding {
+		max-height: 3rem;
+		line-height: 3rem;
+		overflow: hidden;
+		flex: 0 1 auto;
+		min-width: 200px;
 		.logoright & {
-			order: 2;	
+			order: 2;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;	
 		}
 	}
 
 	// Wrapper around the menu area.
-	&__navigation {}
+	&__navigation {
+		display: flex;
+		line-height: 3rem;
+		max-height: 3rem;
+		font-weight: bolder;
+		color: var(--color-primary);
+		@include font-size(20);
+	}
+
+	// Buttons for toggling menu
+	&__toggle {
+		line-height: 3rem;
+		flex: 0 1 auto;
+		.logoleft & {
+			margin-left: 1rem;
+		}
+		@include font-size(20);
+		@media ( min-width: break( small ) ) {
+			min-width: 130px;
+		}
+
+		a {
+			color: var(--color-primary);
+			text-decoration: none;
+			&:visited,
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-primary);
+			}
+		}
+		&--open, &--closed {
+			a {
+				&:after,&:before {
+					content: "";
+					font-family: "Finicon";
+					vertical-align: middle;
+					@include font-size(32);
+					letter-spacing: .3rem;
+				}
+			}
+		}
+
+		&--open {
+			.no-scroll & {
+			display: none;
+			}
+			a {
+				&:after {
+				content: "=";
+				}
+				.logoright & {
+					&:before {
+					content: "=";
+					}
+					&:after {
+					content: "";
+					}
+				}
+			}
+		}
+		&--closed {
+			display: none;
+			z-index: 1000;
+			position: relative;
+			.no-scroll & {
+				display: flex;
+			}
+			a {
+				&:before {
+					content: "x";
+				}
+			}
+		}
+	}
+
+	// Menu name.
+	&__menu-name {
+		color: var(--color-primary);
+		.logoright & {
+			order: 2;
+		}
+		@media ( max-width: break( small ) ) {
+			border: 0;
+			clip:      rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
+			position: absolute !important;
+			width:     1px;
+			height:    1px;
+			margin:    -1px;
+			overflow:  hidden;
+			padding:   0;
+			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+			border:    none;
+		}
+	}
 
 	// Output from the `custom-logo` feature.
 	&__logo {}
