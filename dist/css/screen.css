@@ -759,7 +759,7 @@ input[type=submit]:focus {
 }
 
 .app-header {
-	height: 4rem;
+	height: 6rem;
 }
 .no-scroll .app-header {
 	position: fixed;
@@ -782,6 +782,10 @@ input[type=submit]:focus {
 		padding: 0 40px;
 	}
 }
+.logocenter .app-header__wrapper {
+	flex-wrap: wrap;
+	justify-content: center;
+}
 .app-header__branding {
 	max-height: 3rem;
 	line-height: 3rem;
@@ -795,6 +799,11 @@ input[type=submit]:focus {
 	flex-wrap: wrap;
 	justify-content: flex-end;
 }
+.logocenter .app-header__branding {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+}
 .app-header__navigation {
 	display: flex;
 	line-height: 3rem;
@@ -805,14 +814,21 @@ input[type=submit]:focus {
 	font-size: 20px;
 	font-size: 1.25rem;
 }
+.logocenter .app-header__navigation {
+	line-height: 1rem;
+}
 .app-header__toggle {
 	line-height: 3rem;
 	flex: 0 1 auto;
+	margin: 0 0 0 1rem;
 	font-size: 20px;
 	font-size: 1.25rem;
 }
-.logoleft .app-header__toggle {
-	margin-left: 1rem;
+.logocenter .app-header__toggle {
+	line-height: 1rem;
+}
+.logoright .app-header__toggle {
+	margin: 0 1rem 0 0;
 }
 @media (min-width: 600px) {
 	.app-header__toggle {
@@ -867,7 +883,7 @@ input[type=submit]:focus {
 	order: 2;
 }
 @media (max-width: 600px) {
-	.app-header__menu-name {
+	header:not(.logocenter) .app-header__menu-name {
 		border: 0;
 		clip: rect(1px, 1px, 1px, 1px);
 		-webkit-clip-path: inset(50%);
@@ -893,7 +909,12 @@ input[type=submit]:focus {
 	text-transform: lowercase;
 	font-size: 22px;
 	font-size: 1.375rem;
-	line-height: 3rem;
+}
+@media (min-width: 880px) {
+	.app-header__title {
+		font-size: 26px;
+		font-size: 1.625rem;
+	}
 }
 .show-only-description .app-header__title {
 	border: 0;
@@ -973,6 +994,10 @@ input[type=submit]:focus {
 	word-wrap: normal !important;
 	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 	border: none;
+}
+
+.no-scroll .app-content {
+	padding-top: 6rem;
 }
 
 .comment__content a {
@@ -1099,13 +1124,16 @@ input[type=submit]:focus {
 	display: block;
 	content: "";
 	left: 0;
-	top: 4rem;
+	top: 6rem;
 	width: 100%;
 	height: 100%;
 	z-index: 998;
 	background: #000;
 	background: rgba(0, 0, 0, 0.75);
 	cursor: default;
+}
+.logocenter .menu--primary[aria-expanded=true], .logocenter .menu--primary:target {
+	top: 6rem;
 }
 .menu--primary .menu__link {
 	color: #212121;
@@ -1146,7 +1174,6 @@ input[type=submit]:focus {
 .menu--featured {
 	font-family: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-secondary);
-	line-height: 3rem;
 	overflow: hidden;
 	display: none;
 }

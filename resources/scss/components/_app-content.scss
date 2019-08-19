@@ -9,4 +9,7 @@
 ////
 
 .app-content {
+    .no-scroll & {
+        padding-top: 6rem;
+    }
 }

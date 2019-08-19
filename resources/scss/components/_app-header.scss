@@ -7,7 +7,7 @@
 ////
 
 .app-header {
-	height: 4rem;
+	height: 6rem;
 	// Backdrop when menu is open
 	.no-scroll & {
 		position: fixed;
@@ -28,6 +28,10 @@
 				padding: 0 40px;
 			}
 		}
+		.logocenter & {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	// Wrapper around the title and description.
@@ -43,6 +47,11 @@
 			flex-wrap: wrap;
 			justify-content: flex-end;	
 		}
+		.logocenter & {
+			flex-basis: 100%;
+			display: flex;
+			justify-content: center;
+		}
 	}
 
 	// Wrapper around the menu area.
@@ -53,16 +62,27 @@
 		font-weight: bolder;
 		color: var(--color-primary);
 		@include font-size(20);
+		.logocenter & {
+			line-height: 1rem;
+		}
 	}
 
 	// Buttons for toggling menu
 	&__toggle {
 		line-height: 3rem;
 		flex: 0 1 auto;
-		.logoleft & {
-			margin-left: 1rem;
-		}
+		margin: 0 0 0 1rem;
 		@include font-size(20);
+
+		.logocenter & {
+			line-height: 1rem;
+		}
+		header:not(.logocenter) & {
+
+		}
+		.logoright & {
+			margin: 0 1rem 0 0;
+		}
 		@media ( min-width: break( small ) ) {
 			min-width: 130px;
 		}
@@ -128,18 +148,20 @@
 		.logoright & {
 			order: 2;
 		}
-		@media ( max-width: break( small ) ) {
-			border: 0;
-			clip:      rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width:     1px;
-			height:    1px;
-			margin:    -1px;
-			overflow:  hidden;
-			padding:   0;
-			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-			border:    none;
+		header:not(.logocenter) & {
+			@media ( max-width: break( small ) ) {
+				border: 0;
+				clip:      rect( 1px, 1px, 1px, 1px );
+				clip-path: inset( 50% );
+				position: absolute !important;
+				width:     1px;
+				height:    1px;
+				margin:    -1px;
+				overflow:  hidden;
+				padding:   0;
+				word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+				border:    none;
+			}
 		}
 	}
 
@@ -158,7 +180,11 @@
 		display: inline-block;
 		text-transform: lowercase;
 		@include font-size(22);
-		line-height: 3rem;
+		// line-height: 3rem;
+		@media ( min-width: break( medium ) ) {
+			@include font-size(26);
+		}
+
 		.show-only-description & {
 			border: 0;
 			clip:      rect( 1px, 1px, 1px, 1px );
