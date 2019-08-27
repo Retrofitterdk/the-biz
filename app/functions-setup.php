@@ -75,8 +75,8 @@ add_action( 'after_setup_theme', function() {
 
 	// Add custom logo support.
 	add_theme_support( 'custom-logo', [
-		'width'       => 185,
-		'height'      => 50,
+		'width'       => 270,
+		'height'      => 30,
 		'flex-width'  => true,
 		'flex-height' => true,
 		'header-text' => 'app-header__title'
@@ -304,6 +304,8 @@ add_action( 'widgets_init', function() {
 
 // Adds classes conditionally to body tag
 function body_classes( $classes ) {
+	$hidesitedesc = get_theme_mod( 'hide_site_description' );
+	$hidesitetitle = get_theme_mod( 'hide_site_title' );
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( is_home() ) {
 		$classes[] = 'blog';
@@ -325,7 +327,16 @@ function body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
-	}	
+	}
+	if ( !display_header_text() ) {
+		$classes[] = 'hide-site-title hide-site-description';
+	} else {
+		if ( $hidesitedesc ) {
+		$classes[] = 'hide-site-description';
+		} if ( $hidesitetitle ) {
+		$classes[] = 'hide-site-title';
+		}
+	}
 		return $classes;
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
@@ -337,19 +348,30 @@ function headerAttr(  $attr, $context ) {
 	}
 
 	$logoalignment = get_theme_mod( 'app_header_alignment' );
-	$onlysitetitle = get_theme_mod( 'show_only_sitetitle' );
-	$onlysitedesc = get_theme_mod( 'show_only_sitedescription' );
 
 	if ( $logoalignment ) {
 		$attr['class'] .= sprintf(' ' . $logoalignment);
-	}
-	if ( $onlysitetitle ) {
-		$attr['class'] .= ' show-only-title';
-	}
-	if ( $onlysitedesc ) {
-		$attr['class'] .= ' show-only-description';
 	}
 	return $attr;
 }
 
 add_filter( 'hybrid/attr/header', __NAMESPACE__ . '\headerAttr' , 10, 2 );
+
+
+function change_blogname( $output, $show )
+{
+    if ('name' == $show) {
+		$pos = strpos($output, ':');
+		if ($pos === false) {
+			$splittitle = $output;
+		} else {
+			$splittitle = explode(":", $output );
+			$output = '<span itemprop="legalName" class="screen-reader-text">' . $output . '</span>';
+			$output .= '<span class="first">' . $splittitle[0]. '</span><span class="divider">:</span><span class="last">' . $splittitle[1] . '</span>';
+		}
+		// $output = $splittitle;
+	}
+    return $output;
+}
+
+// add_filter( 'bloginfo', __NAMESPACE__ . '\change_blogname', 10, 2 );
