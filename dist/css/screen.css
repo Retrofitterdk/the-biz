@@ -901,8 +901,8 @@ input[type=submit]:focus {
 }
 .app-header__logo-link {
 	display: inline-block;
-	max-width: 185px;
-	max-height: 50px;
+	max-width: 270px;
+	max-height: 30px;
 }
 .app-header__title {
 	display: inline-block;
@@ -915,21 +915,6 @@ input[type=submit]:focus {
 		font-size: 26px;
 		font-size: 1.625rem;
 	}
-}
-.show-only-description .app-header__title {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	        clip-path: inset(50%);
-	position: absolute !important;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	word-wrap: normal !important;
-	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
-	border: none;
 }
 .app-header__title-link {
 	display: inline-block;
@@ -959,6 +944,21 @@ input[type=submit]:focus {
 	font-family: PT Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-primary);
 }
+.hide-site-title .app-header__title-link {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	border: none;
+}
 .app-header__description {
 	display: inline-block;
 	margin: 0 0 0 1rem;
@@ -980,7 +980,7 @@ input[type=submit]:focus {
 		border: none;
 	}
 }
-.show-only-title .app-header__description {
+.hide-site-description .app-header__description {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	-webkit-clip-path: inset(50%);
