@@ -150,29 +150,19 @@
 		}
 		header:not(.logocenter) & {
 			@media ( max-width: break( small ) ) {
-				border: 0;
-				clip:      rect( 1px, 1px, 1px, 1px );
-				clip-path: inset( 50% );
-				position: absolute !important;
-				width:     1px;
-				height:    1px;
-				margin:    -1px;
-				overflow:  hidden;
-				padding:   0;
-				word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-				border:    none;
+				@include screen-reader-text();
 			}
 		}
 	}
 
 	// Output from the `custom-logo` feature.
-	&__logo {}
+	&__logo {	}
 
 	// Logo link.
 	&__logo-link {
 		display: inline-block;
-		max-width: 185px;
-		max-height: 50px;
+		max-width: 270px;
+		max-height: 30px;
 	}
 
 	// The site title.
@@ -184,20 +174,18 @@
 		@media ( min-width: break( medium ) ) {
 			@include font-size(26);
 		}
-
-		.show-only-description & {
-			border: 0;
-			clip:      rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width:     1px;
-			height:    1px;
-			margin:    -1px;
-			overflow:  hidden;
-			padding:   0;
-			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-			border:    none;
-		}
+		// &:before {
+		// 	content: 'fin';
+		// 	font-family: var(--font-secondary);
+		// 	font-weight: normal;
+		// }
+		// &:after {
+		// 	content: ':kommunikation';
+		// 	font-family: var(--font-primary);
+		// }
+		// &:first-letter {
+		// 	color: red;
+		// }
 	}
 
 	// Site title link.
@@ -226,6 +214,9 @@
 			font-weight: bold;
 			font-family: var(--font-primary);
 		}
+		.hide-site-title & {
+			@include screen-reader-text();
+		}
 	}
 
 	// The site description.
@@ -233,30 +224,10 @@
 		display: inline-block;
 		margin: 0 0 0 1rem;
 		@media ( max-width: break( medium ) ) {
-			border: 0;
-			clip:      rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width:     1px;
-			height:    1px;
-			margin:    -1px;
-			overflow:  hidden;
-			padding:   0;
-			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-			border:    none;
+			@include screen-reader-text();
 		}
-		.show-only-title & {
-			border: 0;
-			clip:      rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width:     1px;
-			height:    1px;
-			margin:    -1px;
-			overflow:  hidden;
-			padding:   0;
-			word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-			border:    none;
+		.hide-site-description & {
+			@include screen-reader-text();
 		}
 	}
 }
