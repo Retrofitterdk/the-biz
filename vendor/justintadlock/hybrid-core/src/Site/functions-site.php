@@ -44,14 +44,6 @@ function render_title( array $args = [] ) {
 
 	$html  = '';
 	$title = get_bloginfo( 'name', 'display' );
-	$pos = strpos($title, ':');
-	if ($pos === false) {
-		$splittitle = $title;
-	} else {
-		$splittitle = explode(":", $title );
-		$splittitle = '<span class="first">' . $splittitle[0]. '</span><span class="divider">:</span><span class="last">' . $splittitle[1] . '</span>';
-	}
-	$title = $splittitle;
 
 	if ( $title ) {
 
