@@ -36,7 +36,6 @@
 
 	// Wrapper around the title and description.
 	&__branding {
-		max-height: 3rem;
 		line-height: 3rem;
 		overflow: hidden;
 		flex: 0 1 auto;
@@ -45,7 +44,7 @@
 			order: 2;
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: flex-end;	
+			justify-content: flex-end;
 		}
 		.logocenter & {
 			flex-basis: 100%;
