@@ -75,8 +75,8 @@ add_action( 'after_setup_theme', function() {
 
 	// Add custom logo support.
 	add_theme_support( 'custom-logo', [
-		'width'       => 185,
-		'height'      => 50,
+		'width'       => null,
+		'height'      => null,
 		'flex-width'  => true,
 		'flex-height' => true,
 		'header-text' => 'app-header__title'
