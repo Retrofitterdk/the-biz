@@ -15,9 +15,9 @@
 @function font-families() {
 
 	@return (
-		primary   : #{"PT Sans", system-ui},
-		secondary : #{"Arvo", system-ui},
-		code      : #{"Source Code Pro", Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier 10 Pitch", "Courier New", Courier, monospace}
+		primary   : #{system-ui},
+		secondary : #{system-ui},
+		code      : #{Monaco, Consolas, Courier, monospace}
 	);
 }
 
