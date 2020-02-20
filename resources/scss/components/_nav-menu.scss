@@ -25,7 +25,7 @@
 		&:target {
 			position: fixed;
 			overflow-y: scroll;
-			top: 4rem;
+			top: 6rem;
 			height: auto;
 			max-height: 75%;
 			box-shadow: 0.25rem 1rem 1rem rgba(0,0,0,.25);
@@ -78,7 +78,6 @@
 					content: "";
 					position: absolute;
 					width: 40px;
-					border-top: 2px solid var(--color-primary);
 				}
 			}
 		}
@@ -124,7 +123,7 @@
 
 	// Menu title.
 	&__title {}
-	
+
 	// Menu items.
 	&__items {
 		list-style: none;
