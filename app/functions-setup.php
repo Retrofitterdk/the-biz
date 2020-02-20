@@ -30,6 +30,10 @@ namespace TheBiz;
  * @access public
  * @return void
  */
+add_action( 'init', function() {
+	remove_filter( 'get_custom_logo', 'Hybrid\custom_logo_class', 5 );
+}, 5 );
+
 add_action( 'after_setup_theme', function() {
 
 	// Sets the theme content width. This variable is also set in the
@@ -356,7 +360,6 @@ function headerAttr(  $attr, $context ) {
 }
 
 add_filter( 'hybrid/attr/header', __NAMESPACE__ . '\headerAttr' , 10, 2 );
-
 
 function change_blogname( $output, $show )
 {
