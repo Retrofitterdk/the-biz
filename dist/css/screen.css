@@ -339,9 +339,9 @@ template {
 	--color-white: #ffffff;
 	--color-pink: #ffcdd2;
 	--color-light-grey: #bdbdbd;
-	--font-primary: PT Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-	--font-secondary: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-	--font-code: Source Code Pro, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier 10 Pitch, Courier New, Courier, monospace;
+	--font-primary: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	--font-secondary: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	--font-code: Monaco, Consolas, Courier, monospace;
 	--fontsize-small: 12px;
 	--fontsize-regular: 16px;
 	--fontsize-large: 36px;
@@ -376,7 +376,7 @@ optgroup,
 textarea {
 	color: #212121;
 	color: var(--color-black);
-	font-family: PT Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-primary);
 	line-height: 1.5;
 	line-height: var(--lineheight-body);
@@ -454,7 +454,7 @@ a:hover, a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-secondary);
 	line-height: 1.15;
 	line-height: var(--lineheight-heading);
@@ -503,7 +503,7 @@ address {
 pre {
 	background: #bdbdbd;
 	background: var(--color-light-grey);
-	font-family: Source Code Pro, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier 10 Pitch, Courier New, Courier, monospace;
+	font-family: Monaco, Consolas, Courier, monospace;
 	font-family: var(--font-code);
 	font-size: 9.375px;
 	font-size: 0.5859375rem;
@@ -516,7 +516,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: Source Code Pro, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier 10 Pitch, Courier New, Courier, monospace;
+	font-family: Monaco, Consolas, Courier, monospace;
 	font-family: var(--font-code);
 	font-size: 0.9375px;
 	font-size: 0.05859375rem;
@@ -787,7 +787,6 @@ input[type=submit]:focus {
 	justify-content: center;
 }
 .app-header__branding {
-	max-height: 3rem;
 	line-height: 3rem;
 	overflow: hidden;
 	flex: 0 1 auto;
@@ -927,7 +926,7 @@ input[type=submit]:focus {
 	color: var(--color-black);
 }
 .app-header__title-link .first {
-	font-family: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-secondary);
 	font-weight: normal;
 }
@@ -941,7 +940,7 @@ input[type=submit]:focus {
 }
 .app-header__title-link .last {
 	font-weight: bold;
-	font-family: PT Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-primary);
 }
 .hide-site-title .app-header__title-link {
@@ -1114,7 +1113,7 @@ input[type=submit]:focus {
 .menu--primary[aria-expanded=true], .menu--primary:target {
 	position: fixed;
 	overflow-y: scroll;
-	top: 4rem;
+	top: 6rem;
 	height: auto;
 	max-height: 75%;
 	box-shadow: 0.25rem 1rem 1rem rgba(0, 0, 0, 0.25);
@@ -1168,11 +1167,9 @@ input[type=submit]:focus {
 	content: "";
 	position: absolute;
 	width: 40px;
-	border-top: 2px solid #d32f2f;
-	border-top: 2px solid var(--color-primary);
 }
 .menu--featured {
-	font-family: Arvo, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 	font-family: var(--font-secondary);
 	overflow: hidden;
 	display: none;
