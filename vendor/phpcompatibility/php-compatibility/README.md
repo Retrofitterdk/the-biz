@@ -6,22 +6,36 @@ PHP Compatibility Coding Standard for PHP CodeSniffer
 [![License](https://poser.pugx.org/phpcompatibility/php-compatibility/license.png)](https://github.com/PHPCompatibility/PHPCompatibility/blob/master/LICENSE)
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=wimg&url=https://github.com/PHPCompatibility/PHPCompatibility&title=PHPCompatibility&language=&tags=github&category=software)
 
-[![Build Status](https://travis-ci.org/PHPCompatibility/PHPCompatibility.svg?branch=master)](https://travis-ci.org/PHPCompatibility/PHPCompatibility)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PHPCompatibility/PHPCompatibility/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PHPCompatibility/PHPCompatibility/)
-[![Coverage Status](https://coveralls.io/repos/github/PHPCompatibility/PHPCompatibility/badge.svg?branch=master)](https://coveralls.io/github/PHPCompatibility/PHPCompatibility?branch=master)
+[![Build Status](https://travis-ci.org/PHPCompatibility/PHPCompatibility.svg?branch=develop)](https://travis-ci.org/PHPCompatibility/PHPCompatibility)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PHPCompatibility/PHPCompatibility/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/PHPCompatibility/PHPCompatibility/)
+[![Coverage Status](https://coveralls.io/repos/github/PHPCompatibility/PHPCompatibility/badge.svg?branch=develop)](https://coveralls.io/github/PHPCompatibility/PHPCompatibility?branch=develop)
 
 [![Minimum PHP Version](https://img.shields.io/packagist/php-v/phpcompatibility/php-compatibility.svg?maxAge=3600)](https://packagist.org/packages/phpcompatibility/php-compatibility)
-[![Tested on PHP 5.3 to nightly](https://img.shields.io/badge/tested%20on-PHP%205.3%20|%205.4%20|%205.5%20|%205.6%20|%207.0%20|%207.1%20|%207.2%20|%207.3%20|%20nightly-brightgreen.svg?maxAge=2419200)](https://travis-ci.org/PHPCompatibility/PHPCompatibility)
+[![Tested on PHP 5.3 to nightly](https://img.shields.io/badge/tested%20on-PHP%205.3%20|%205.4%20|%205.5%20|%205.6%20|%207.0%20|%207.1%20|%207.2%20|%207.3%20|%207.4%20-brightgreen.svg?maxAge=2419200)](https://travis-ci.org/PHPCompatibility/PHPCompatibility)
 
 
 This is a set of sniffs for [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) that checks for PHP cross-version compatibility.
 It will allow you to analyse your code for compatibility with higher and lower versions of PHP. 
 
+* [PHP Version Support](#php-version-support)
+* [Requirements](#requirements)
+* [Thank you](#thank-you)
+* [Upgrading to PHPCompatibility 9.0.0](#warning-upgrading-to-phpcompatibility-900-warning)
+* [Installation in a Composer project (method 1)](#installation-in-a-composer-project-method-1)
+* [Installation via a git check-out to an arbitrary directory (method 2)](#installation-via-a-git-check-out-to-an-arbitrary-directory-method-2)
+* [Sniffing your code for compatibility with specific PHP version(s)](#sniffing-your-code-for-compatibility-with-specific-php-versions)
+    + [Using a framework/CMS/polyfill specific ruleset](#using-a-frameworkcmspolyfill-specific-ruleset)
+* [Using a custom ruleset](#using-a-custom-ruleset)
+    + [`testVersion` in the ruleset versus command-line](#testversion-in-the-ruleset-versus-command-line)
+    + [PHPCompatibility specific options](#phpcompatibility-specific-options)
+* [Projects extending PHPCompatibility](#projects-extending-phpcompatibility)
+* [Contributing](#contributing)
+* [License](#license)
 
 PHP Version Support
 -------
 
-The project aims to cover all PHP compatibility changes introduced since PHP 5.0 up to the latest PHP release. This is an ongoing process and coverage is not yet 100% (if, indeed, it ever could be). Progress is tracked on [our Github issue tracker](https://github.com/PHPCompatibility/PHPCompatibility/issues).
+The project aims to cover all PHP compatibility changes introduced since PHP 5.0 up to the latest PHP release. This is an ongoing process and coverage is not yet 100% (if, indeed, it ever could be). Progress is tracked on [our GitHub issue tracker](https://github.com/PHPCompatibility/PHPCompatibility/issues).
 
 Pull requests that check for compatibility issues in PHP 4 code - in particular between PHP 4 and PHP 5.0 - are very welcome as there are still situations where people need help upgrading legacy systems. However, coverage for changes introduced before PHP 5.1 will remain patchy as sniffs for this are not actively being developed at this time.
 
@@ -41,6 +55,8 @@ For running the sniffs on PHP 7.3, it is recommended to use PHP_CodeSniffer 3.3.
 PHP_CodeSniffer < 2.9.2/3.3.1 is not fully compatible with PHP 7.3, which effectively means that PHPCompatibility can't be either.
 While the sniffs will still work in _most_ cases, you can expect PHP warnings to be thrown.
 
+For running the sniffs on PHP 7.4, it is recommended to use PHP_CodeSniffer 3.5.0+.
+
 As of version 8.0.0, the PHPCompatibility standard can also be used with PHP CodeSniffer 3.x.
 
 As of version 9.0.0, support for PHP CodeSniffer 1.5.x and low 2.x versions < 2.3.0 has been dropped.
@@ -49,8 +65,6 @@ As of version 9.0.0, support for PHP CodeSniffer 1.5.x and low 2.x versions < 2.
 Thank you
 ---------
 Thanks to all [contributors](https://github.com/PHPCompatibility/PHPCompatibility/graphs/contributors) for their valuable contributions.
-
-[![WPEngine](https://cu.be/img/wpengine.png)](https://wpengine.com)
 
 Thanks to [WP Engine](https://wpengine.com) for their support on the PHP 7.0 sniffs.
 
@@ -189,7 +203,7 @@ You can also set the `testVersion` from within the ruleset:
 
 Other advanced options, such as changing the message type or severity of select sniffs, as described in the [PHPCS Annotated ruleset](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml) wiki page are, of course, also supported.
 
-#### `testVersion` in the ruleset versus command-line
+### `testVersion` in the ruleset versus command-line
 
 In PHPCS 3.2.0 and lower, once you set the `testVersion` in the ruleset, you could not overrule it from the command-line anymore.
 Starting with PHPCS 3.3.0, a `testVersion` set via the command-line will overrule the `testVersion` in the ruleset.
@@ -197,7 +211,7 @@ Starting with PHPCS 3.3.0, a `testVersion` set via the command-line will overrul
 This allows for more flexibility when, for instance, your project needs to comply with PHP `5.5-`, but you have a bootstrap file which needs to be compatible with PHP `5.2-`.
 
 
-#### PHPCompatibility specific options
+### PHPCompatibility specific options
 
 At this moment, there is one sniff which has a property which can be set via the ruleset. More custom properties may become available in the future.
 
@@ -217,6 +231,19 @@ To whitelist userland functions, you can pass a comma-delimited list of function
 This property was added in PHPCompatibility version 7.0.1.
 As of PHPCompatibility version 8.0.0, this custom property is only supported in combination with PHP CodeSniffer > 2.6.0 due to an upstream bug (which was fixed in PHPCS 2.6.0).
 
+Projects extending PHPCompatibility
+--------------------------------------
+There are hundreds of public projects using PHPCompatibility or extending on top of it. A short list of some that you might know or have a look at :
+* [adamculp/php-code-quality](https://github.com/adamculp/php-code-quality) - a Docker image doing a lot of code quality checks
+* [VFAC/PHP7Compatibility](https://vfac.fr/projects/php7compatibility) - a Docker container to check PHP7 Compatibility
+* [grumphp-php-compatibility](https://github.com/wunderio/grumphp-php-compatibility) - A plugin for [GrumPHP](https://github.com/phpro/grumphp)
+* PHPCompatibility Checker WordPress plugin : [Wordpress site](https://wordpress.org/plugins/php-compatibility-checker/) and [Github](https://github.com/wpengine/phpcompat/)
+* [WordPress Tide project](https://wptide.org/)
+* [PHPStorm has built-in support for PHPCompatibility](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html#788c81b6)
+
+Contributing
+-------
+Contributions are very welcome. Please read the [CONTRIBUTING](.github/CONTRIBUTING.md) documentation to get started.
 
 License
 -------
