@@ -171,7 +171,7 @@ wp.customize('header_textcolor', function (value) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/steffen/Local Sites/finkom/app/public/wp-content/themes/the-biz/resources/js/customize-preview.js */"./resources/js/customize-preview.js");
+module.exports = __webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/js/customize-preview.js */"./resources/js/customize-preview.js");
 
 
 /***/ })

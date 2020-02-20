@@ -33,7 +33,7 @@ The only supported installation method is via [Composer](https://getcomposer.org
 
 If you don't have a Composer plugin installed to manage the `installed_paths` setting for PHP_CodeSniffer, run the following from the command-line:
 ```bash
-composer require --dev dealerdirect/phpcodesniffer-composer-installer:^0.4.3 phpcompatibility/phpcompatibility-wp:*
+composer require --dev dealerdirect/phpcodesniffer-composer-installer:^0.5.0 phpcompatibility/phpcompatibility-wp:*
 composer install
 ```
 
@@ -61,12 +61,12 @@ By default, you will only receive notifications about deprecated and/or removed 
 
 To get the most out of the PHPCompatibilityWP standard, you should specify a `testVersion` to check against. That will enable the checks for both deprecated/removed PHP features as well as the detection of code using new PHP features.
 
-The minimum PHP requirement of the WordPress project at this time is PHP 5.2.4. If you want to enforce this, either add `--runtime-set testVersion 5.2-` to your command-line command or add `<config name="testVersion" value="5.2-"/>` to your [custom ruleset](https://github.com/PHPCompatibility/PHPCompatibility#using-a-custom-ruleset).
+The minimum PHP requirement of the WordPress project up to WP 5.1 was 5.2.4. As of WP 5.2 it will be PHP 5.6.20. If you want to enforce this, either add `--runtime-set testVersion 5.6-` to your command-line command or add `<config name="testVersion" value="5.6-"/>` to your [custom ruleset](https://github.com/PHPCompatibility/PHPCompatibility#using-a-custom-ruleset).
 
 For example:
 ```bash
-# For a project which should be compatible with PHP 5.2 and higher:
-./vendor/bin/phpcs -p . --standard=PHPCompatibilityWP --runtime-set testVersion 5.2-
+# For a project which should be compatible with PHP 5.6 and higher:
+./vendor/bin/phpcs -p . --standard=PHPCompatibilityWP --runtime-set testVersion 5.6-
 ```
 
 For more detailed information about setting the `testVersion`, see the README of the generic [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions) standard.
@@ -76,7 +76,7 @@ For more detailed information about setting the `testVersion`, see the README of
 
 By default PHP_CodeSniffer will analyse PHP, JavaScript and CSS files. As the PHPCompatibility sniffs only target PHP code, you can make the run slightly faster by telling PHP_CodeSniffer to only check PHP files, like so:
 ```bash
-./vendor/bin/phpcs -p . --standard=PHPCompatibilityWP --extensions=php --runtime-set testVersion 5.2-
+./vendor/bin/phpcs -p . --standard=PHPCompatibilityWP --extensions=php --runtime-set testVersion 5.6-
 ```
 
 ## License
@@ -85,6 +85,15 @@ All code within the PHPCompatibility organisation is released under the GNU Less
 
 
 ## Changelog
+
+### 2.1.0 - 2019-08-29
+
+- Ruleset: Updated for the Sodium_Compat polyfill which is included in WordPress 5.2.
+- Composer: The recommended version of the [Composer PHPCS plugin](https://github.com/Dealerdirect/phpcodesniffer-composer-installer/) has been upped to `^0.5.0`.
+- Documentation: Updated the ruleset inline documentation and the Readme to reflect the change in minimum PHP requirements for WordPress as of WP 5.2.
+- Documentation: Updated the ruleset inline documentation to include information on when each polyfill was added to/removed from WordPress.
+- CI: The rulesets are now also tested against PHP 7.3.
+    Note: full PHP 7.3 support is only available in combination with PHP_CodeSniffer 2.9.2 or 3.3.1+ due to an incompatibility within PHP_CodeSniffer itself.
 
 ### 2.0.0 - 2018-10-07
 

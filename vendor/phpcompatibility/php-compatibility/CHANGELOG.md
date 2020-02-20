@@ -14,6 +14,167 @@ From version 8.0.0 onwards, [Semantic Versioning](http://semver.org/) is used.
 
 _Nothing yet._
 
+## [9.3.5] - 2019-12-27
+
+See all related issues and PRs in the [9.3.5 milestone].
+
+### Added
+- :star: `PHPCompatibility.Classes.NewClasses` sniff: recognize the new `FFI` extension related classes as introduced in PHP 7.4. [#949](https://github.com/PHPCompatibility/PHPCompatibility/pull/949)
+- :star: `PHPCompatibility.IniDirectives.NewIniDirectives` sniff: detect use of the new `FFI` extension related ini directives as introduced in PHP 7.4. [#949](https://github.com/PHPCompatibility/PHPCompatibility/pull/949)
+
+### Changed
+- :pencil: `PHPCompatibility.Syntax.NewShortArray`: improved clarity of the error message and made it consistent with other error messages in this standard. [#934](https://github.com/PHPCompatibility/PHPCompatibility/pull/934)
+- :pencil: `PHPCompatibility.Interfaces.NewInterfaces`: updated the URL which is mentioned in select error messages. [#942](https://github.com/PHPCompatibility/PHPCompatibility/pull/942)
+- :recycle: Another slew of code documentation fixes. [#937](https://github.com/PHPCompatibility/PHPCompatibility/pull/937), [#939](https://github.com/PHPCompatibility/PHPCompatibility/pull/939), [#940](https://github.com/PHPCompatibility/PHPCompatibility/pull/940), [#941](https://github.com/PHPCompatibility/PHPCompatibility/pull/941), [#943](https://github.com/PHPCompatibility/PHPCompatibility/pull/943), [#944](https://github.com/PHPCompatibility/PHPCompatibility/pull/944), [#951](https://github.com/PHPCompatibility/PHPCompatibility/pull/951), [#950](https://github.com/PHPCompatibility/PHPCompatibility/pull/950). Fixes [#734](https://github.com/PHPCompatibility/PHPCompatibility/issues/734).
+- :green_heart: Travis: various tweaks. The builds against PHP 7.4 are no longer allowed to fail. [#935](https://github.com/PHPCompatibility/PHPCompatibility/pull/935), [#938](https://github.com/PHPCompatibility/PHPCompatibility/pull/938)
+    For running the sniffs on PHP 7.4, it is recommended to use PHP_CodeSniffer 3.5.0+ as PHP_CodeSniffer itself is
+    not compatible with PHP 7.4 until version 3.5.0.
+
+### Fixed
+- :bug: `PHPCompatibility.Classes.NewClasses`: two new PHP 7.4 classes were being checked as if they were Exceptions. [#945](https://github.com/PHPCompatibility/PHPCompatibility/pull/945)
+
+### Credits
+Thanks go out to [William Entriken] for their contribution to this version. :clap:
+
+
+## [9.3.4] - 2019-11-15
+
+See all related issues and PRs in the [9.3.4 milestone].
+
+### Fixed
+- :bug: `PHPCompatibility.Keywords.ForbiddenNames`: false positive for list when used in a `foreach()` condition. [#930](https://github.com/PHPCompatibility/PHPCompatibility/pull/930). Fixes [#928](https://github.com/PHPCompatibility/PHPCompatibility/issues/928), [#929](https://github.com/PHPCompatibility/PHPCompatibility/pull/929)
+
+### Credits
+Thanks go out to [Sergii Bondarenko] for their contribution to this version. :clap:
+
+
+## [9.3.3] - 2019-11-11
+
+See all related issues and PRs in the [9.3.3 milestone].
+
+### Added
+- :star: `PHPCompatibility.Constants.NewConstants` sniff: detection of yet more (undocumented) PHP 7.2 Sodium constants. [#924](https://github.com/PHPCompatibility/PHPCompatibility/pull/924)
+- :star: `PHPCompatibility.Keywords.ForbiddenNames` sniff: detect the use of more reserved keywords which are not allowed to be used to name certain constructs. [#923](https://github.com/PHPCompatibility/PHPCompatibility/pull/923). Fixes [#922](https://github.com/PHPCompatibility/PHPCompatibility/issues/922)
+
+### Fixed
+- :bug: `PHPCompatibility.FunctionNameRestrictions.RemovedPHP4StyleConstructors`: false positive detecting PHP4-style constructors when declared in interfaces. The class implementing the interface will not have the same name as the interface, so the actual method would not be regarded as a PHP4 style constructor. [#921](https://github.com/PHPCompatibility/PHPCompatibility/pull/921)
+
+### Credits
+Thanks go out to [Nikhil] for their contribution to this version. :clap:
+
+
+## [9.3.2] - 2019-10-16
+
+See all related issues and PRs in the [9.3.2 milestone].
+
+### Added
+- :star: `PHPCompatibility.Constants.NewConstants` sniff: detection of the PHP 7.2 `SODIUM_CRYPTO_PWHASH_ALG_ARGON2ID13` constant. [#915](https://github.com/PHPCompatibility/PHPCompatibility/pull/915)
+- :books: Readme: a list of projects which are build upon or extend PHPCompatibility. [#904](https://github.com/PHPCompatibility/PHPCompatibility/pull/904)
+
+### Changed
+- :pushpin: `PHPCompatibility.FunctionNameRestrictions.RemovedPHP4StyleConstructors`: minor efficiency fix to make the sniff faster. [#912](https://github.com/PHPCompatibility/PHPCompatibility/pull/912)
+- :pushpin: `PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames`: functions marked as `@deprecated` in the function docblock will now be ignored by this sniff. [#917](https://github.com/PHPCompatibility/PHPCompatibility/pull/917). Fixes [#911](https://github.com/PHPCompatibility/PHPCompatibility/issues/911)
+- :pencil: `PHPCompatibility.FunctionDeclarations.ForbiddenToStringParameters`: the `$ooScopeTokens` property is now `protected`, it should never have been `public` in the first place. [#907](https://github.com/PHPCompatibility/PHPCompatibility/pull/907)
+- :recycle: More code documentation fixes. [#903](https://github.com/PHPCompatibility/PHPCompatibility/pull/903), [#916](https://github.com/PHPCompatibility/PHPCompatibility/pull/916)
+- :books: Readme/Contributing: various tweaks. [#904](https://github.com/PHPCompatibility/PHPCompatibility/pull/904), [#905](https://github.com/PHPCompatibility/PHPCompatibility/pull/905)
+
+### Fixed
+- :bug: `PHPCompatibility.FunctionUse.OptionalToRequiredFunctionParameters`: false positive when a class is instantiated which has the same name as one of the affected functions. [#914](https://github.com/PHPCompatibility/PHPCompatibility/pull/914). Fixes [#913](https://github.com/PHPCompatibility/PHPCompatibility/issues/913)
+- :bug: `PHPCompatibility.FunctionUse.RequiredToOptionalFunctionParameters`: false positive when a class is instantiated which has the same name as one of the affected functions. [#914](https://github.com/PHPCompatibility/PHPCompatibility/pull/914)
+- :bug: `PHPCompatibility.MethodUse.NewDirectCallsToClone`: false positive on calling `__clone()` from within the class being cloned [#910](https://github.com/PHPCompatibility/PHPCompatibility/pull/910). Fixes [#629 (comment)](https://github.com/PHPCompatibility/PHPCompatibility/issues/629#issuecomment-532607809)
+- :bug: `PHPCompatibility.Miscellaneous.ValidIntegers`: binary numbers using an uppercase `B` were not always recognized correctly. [#909](https://github.com/PHPCompatibility/PHPCompatibility/pull/909)
+
+
+## [9.3.1] - 2019-09-06
+
+See all related issues and PRs in the [9.3.1 milestone].
+
+### Changed
+- :recycle: A whole slew of code documentation fixes. [#892](https://github.com/PHPCompatibility/PHPCompatibility/pull/892), [#895](https://github.com/PHPCompatibility/PHPCompatibility/pull/895), [#896](https://github.com/PHPCompatibility/PHPCompatibility/pull/896), [#897](https://github.com/PHPCompatibility/PHPCompatibility/pull/897), [#898](https://github.com/PHPCompatibility/PHPCompatibility/pull/898), [#899](https://github.com/PHPCompatibility/PHPCompatibility/pull/899), [#900](https://github.com/PHPCompatibility/PHPCompatibility/pull/900)
+- :wrench: Travis: minor tweaks to the build script. [#893](https://github.com/PHPCompatibility/PHPCompatibility/pull/893)
+
+### Fixed
+- :bug: `PHPCompatibility.ParameterValues.RemovedImplodeFlexibleParamOrder`: false positive when an array item in the second parameter contained a ternary. [#891](https://github.com/PHPCompatibility/PHPCompatibility/pull/891). Fixes [#890](https://github.com/PHPCompatibility/PHPCompatibility/issues/890)
+- :bug: `PHPCompatibility.ParameterValues.RemovedImplodeFlexibleParamOrder`: will now take array casts into account when determining which parameter is `$pieces`. [#891](https://github.com/PHPCompatibility/PHPCompatibility/pull/891).
+- :bug: `PHPCompatibility.ParameterValues.RemovedImplodeFlexibleParamOrder`: hardening of the logic to not examine the second parameter when the first is just and only a text string (`$glue`). [#891](https://github.com/PHPCompatibility/PHPCompatibility/pull/891).
+
+
+## [9.3.0] - 2019-08-29
+
+See all related issues and PRs in the [9.3.0 milestone].
+
+To keep informed of the progress of covering "_everything PHP 7.4_" in PHPCompatibility, please subscribe to issue [#808](https://github.com/PHPCompatibility/PHPCompatibility/issues/808).
+
+### Changes expected in PHPCompatibility 10.0.0
+The next version of PHPCompatibility is expected to include a new external dependency.
+
+In this same release, support for PHP < 5.4 and PHP_CodeSniffer < 2.6.0 will be dropped.
+
+The `10.0.0` release is expected around the same time as the release of PHP 7.4 - end of November/beginning of December 2019.
+
+### Added
+- :star2: New `PHPCompatibility.Miscellaneous.NewPHPOpenTagEOF` sniff to detect a stand-alone PHP open tag at the end of a file, without trailing newline, as will be supported as of PHP 7.4. [#843](https://github.com/PHPCompatibility/PHPCompatibility/pull/846)
+- :star2: New `PHPCompatibility.ParameterValues.ForbiddenStripTagsSelfClosingXHTML` sniff to detect calls to `strip_tags()` passing self-closing XHTML tags in the `$allowable_tags` parameter. This has not been supported since PHP 5.3.4. [#866](https://github.com/PHPCompatibility/PHPCompatibility/pull/866)
+- :star2: New `PHPCompatibility.ParameterValues.NewHTMLEntitiesEncodingDefault` sniff to detect calls to `html_entity_decode()`, `htmlentities()` and `htmlspecialchars()` which are impacted by the change to the default value of the `$encoding` parameter in PHP 5.4. [#862](https://github.com/PHPCompatibility/PHPCompatibility/pull/862)
+- :star2: New `PHPCompatibility.ParameterValues.NewIconvMbstringCharsetDefault` sniff to detect code impacted by the change in the `default_charset` value in PHP 5.6. [#864](https://github.com/PHPCompatibility/PHPCompatibility/pull/864) Fixes [#839](https://github.com/PHPCompatibility/PHPCompatibility/issues/839)
+- :star2: New `PHPCompatibility.ParameterValues.NewIDNVariantDefault` sniff to detect calls to `idn_to_ascii()` and `idn_to_utf8()` impacted by the PHP 7.4 change in the default value for the `$variant` parameter. [#861](https://github.com/PHPCompatibility/PHPCompatibility/pull/861)
+- :star2: New `PHPCompatibility.ParameterValues.NewPasswordAlgoConstantValues` sniff to detect calls to `password_hash()` and `password_needs_rehash()` impacted by the changed value of the `PASSWORD_DEFAULT`, `PASSWORD_BCRYPT`, `PASSWORD_ARGON2I` and `PASSWORD_ARGON2ID` constants in PHP 7.4. [#865](https://github.com/PHPCompatibility/PHPCompatibility/pull/865)
+- :star2: New `PHPCompatibility.ParameterValues.NewProcOpenCmdArray` sniff to detect calls to `proc_open()` passing an array for the `$cmd` parameter as supported as of PHP 7.4. [#869](https://github.com/PHPCompatibility/PHPCompatibility/pull/869)
+- :star2: New `PHPCompatibility.ParameterValues.NewStripTagsAllowableTagsArray` sniff to detect calls to `strip_tags()` passing an array for the `$allowable_tags` parameter as will be supported as of PHP 7.4. [#867](https://github.com/PHPCompatibility/PHPCompatibility/pull/867)
+- :star2: New `PHPCompatibility.ParameterValues.RemovedImplodeFlexibleParamOrder` sniff to detect `implode()` being called with `$glue` and `$pieces` in reverse order from the documented argument order. This was previously allowed for historical reasons, but will be deprecated in PHP 7.4. [#846](https://github.com/PHPCompatibility/PHPCompatibility/pull/846)
+- :star2: New `PHPCompatibility.ParameterValues.RemovedMbStrrposEncodingThirdParam` sniff to detect the `$encoding` being passed as the third, instead of the fourth parameter, to `mb_strrpos()` as has been soft deprecated since PHP 5.2 and will be hard deprecated as of PHP 7.4. [#860](https://github.com/PHPCompatibility/PHPCompatibility/pull/860)
+- :star2: New `PHPCompatibility.Syntax.RemovedCurlyBraceArrayAccess` sniff to detect array and string offset access using curly braces as will be deprecated as of PHP 7.4. [#855](https://github.com/PHPCompatibility/PHPCompatibility/pull/855)
+    - In contrast to any other sniff in the PHPCompatibility standard, this sniff contains an auto-fixer.
+- :star2: New `PHPCompatibility.TextStrings.NewUnicodeEscapeSequence` sniff to detect use of the PHP 7.0+ unicode codepoint escape sequences and issues with invalid sequences. [#856](https://github.com/PHPCompatibility/PHPCompatibility/pull/856)
+- :star2: New `PHPCompatibility.Upgrade.LowPHP` sniff to give users of old PHP versions advance warning when support will be dropped in the near future. [#838](https://github.com/PHPCompatibility/PHPCompatibility/pull/838)
+    At this moment, the intention is to drop support for PHP 5.3 by the end of this year.
+- :star: `PHPCompatibility.Classes.NewClasses` sniff: recognize the new `WeakReference` class as introduced in PHP 7.4. [#857](https://github.com/PHPCompatibility/PHPCompatibility/pull/857)
+- :star: `PHPCompatibility.Constants.NewConstants` sniff: detection of new Curl constants as introduced in PHP 7.3.5. [#878](https://github.com/PHPCompatibility/PHPCompatibility/pull/878)
+- :star: `PHPCompatibility.Constants.NewConstants` sniff: detection of the revived `T_BAD_CHARACTER` constant as re-introduced in PHP 7.4. [#882](https://github.com/PHPCompatibility/PHPCompatibility/pull/882)
+- :star: `PHPCompatibility.Constants.NewConstants` sniff: detection of the new `IMG_FILTER_SCATTER` and `PASSWORD_ARGON2_PROVIDER` constants as introduced in PHP 7.4. [#887](https://github.com/PHPCompatibility/PHPCompatibility/pull/887)
+- :star: `PHPCompatibility.Constants.RemovedConstants` sniff: detection of use of the `CURLPIPE_HTTP1` constant which will be deprecated in PHP 7.4. [#879](https://github.com/PHPCompatibility/PHPCompatibility/pull/879)
+- :star: `PHPCompatibility.Constants.RemovedConstants` sniff: detection of use of the `FILTER_SANITIZE_MAGIC_QUOTES` constant which will be deprecated in PHP 7.4. [#845](https://github.com/PHPCompatibility/PHPCompatibility/pull/845)
+- :star: `PHPCompatibility.Constants.RemovedConstants` sniff: detection of use of the `T_CHARACTER` and `T_BAD_CHARACTER` constants which were removed in PHP 7.0. [#882](https://github.com/PHPCompatibility/PHPCompatibility/pull/882)
+- :star: `PHPCompatibility.FunctionDeclarations.NewMagicMethods` sniff: recognize the new `__serialize()` and `__unserialize()` magic methods as introduced in PHP 7.4. [#868](https://github.com/PHPCompatibility/PHPCompatibility/pull/868)
+- :star: `PHPCompatibility.FunctionDeclarations.NewMagicMethods` sniff: recognize the PHP 5.0 `__construct()` and `__destruct()` magic methods. [#884](https://github.com/PHPCompatibility/PHPCompatibility/pull/884)
+- :star: `PHPCompatibility.FunctionDeclarations.NonStaticMagicMethods` sniff: recognize the new `__serialize()` and `__unserialize()` magic methods as introduced in PHP 7.4. [#868](https://github.com/PHPCompatibility/PHPCompatibility/pull/868)
+- :star: `PHPCompatibility.FunctionUse.NewFunctions` sniff: recognize the new PHP 7.4 function `imagecreatefromtga()`. [#873](https://github.com/PHPCompatibility/PHPCompatibility/pull/873)
+- :star: `PHPCompatibility.FunctionUse.RemovedFunctionParameters` sniff: recognize the deprecation of the `$age` parameter of the `curl_version()` function. [#874](https://github.com/PHPCompatibility/PHPCompatibility/pull/874)
+- :star: `PHPCompatibility.FunctionUse.RemovedFunctions` sniff: recognize the PHP 7.4 deprecated `convert_cyr_string()()`, `ezmlm_hash()`, `get_magic_quotes_gpc()`, `get_magic_quotes_runtime()`, `hebrevc()`, `is_real()`, `money_format()` and `restore_include_path()` functions. [#847](https://github.com/PHPCompatibility/PHPCompatibility/pull/847)
+- :star: `PHPCompatibility.IniDirectives.NewIniDirectives` sniff: detect use of the new PHP 7.4 `zend.exception_ignore_args` ini directive. [#871](https://github.com/PHPCompatibility/PHPCompatibility/pull/871)
+- :star: `PHPCompatibility.IniDirectives.RemovedIniDirectives` sniff: detect use of the `allow_url_include` ini directive which is deprecated as of PHP 7.4. [#870](https://github.com/PHPCompatibility/PHPCompatibility/pull/870)
+- :star: `PHPCompatibility.IniDirectives.RemovedIniDirectives` sniff: detection of use of the `opcache.load_comments` directive which was removed in PHP 7.0. [#883](https://github.com/PHPCompatibility/PHPCompatibility/pull/883)
+- :star: `PHPCompatibility.ParameterValues.NewHashAlgorithms`: recognize use of the new PHP 7.4 `crc32c` hash algorithm. [#872](https://github.com/PHPCompatibility/PHPCompatibility/pull/872)
+- :star: `PHPCompatibility.TypeCasts.RemovedTypeCasts` sniff: detect usage of the `(real)` type cast which will be deprecated in PHP 7.4. [#844](https://github.com/PHPCompatibility/PHPCompatibility/pull/844)
+- :star: Recognize the `recode` extension functionality which will be removed in PHP 7.4 (moved to PECL) in the `RemovedExtensions` and `RemovedFunctions` sniffs. [#841](https://github.com/PHPCompatibility/PHPCompatibility/pull/841)
+- :star: Recognize the `OPcache` extension functionality which was be introduced in PHP 5.5, but not yet fully accounted for in the `NewFunctions` and `NewIniDirectives` sniffs.  [#883](https://github.com/PHPCompatibility/PHPCompatibility/pull/883)
+- :star: New `getCompleteTextString()` utility method to the `PHPCompatibility\Sniff` class. [#856](https://github.com/PHPCompatibility/PHPCompatibility/pull/856)
+- :umbrella: Unit test for the `PHPCompatibility.Upgrade.LowPHPCS` sniff.
+- :umbrella: Some extra unit tests for the `PHPCompatibility.ParameterValues.NewNegativeStringOffset`, `PHPCompatibility.ParameterValues.RemovedMbStringModifiers` and sniffs. [#876](https://github.com/PHPCompatibility/PHPCompatibility/pull/876), [#877](https://github.com/PHPCompatibility/PHPCompatibility/pull/877)
+- :books: `CONTRIBUTING.md`: Added a list of typical sources for information about changes to PHP. [#875](https://github.com/PHPCompatibility/PHPCompatibility/pull/875)
+
+### Changed
+- :pushpin: `PHPCompatibility.FunctionDeclarations.NewExceptionsFromToString` sniff: the sniff will now also examine the function docblock, if available, and will throw an error when a `@throws` tag is found in the docblock. [#880](https://github.com/PHPCompatibility/PHPCompatibility/pull/880). Fixes [#863](https://github.com/PHPCompatibility/PHPCompatibility/issues/863)
+- :pushpin: `PHPCompatibility.FunctionDeclarations.NonStaticMagicMethods` sniff: will now also check the visibility and `static` (or not) requirements of the magic `__construct()`, `__destruct()`, `__clone()`, `__debugInfo()`, `__invoke()` and `__set_state()` methods. [#885](https://github.com/PHPCompatibility/PHPCompatibility/pull/885)
+- :pushpin: `PHPCompatibility.Syntax.NewArrayStringDereferencing` sniff: the sniff will now also recognize array string dereferencing using curly braces as was (silently) supported since PHP 7.0. [#851](https://github.com/PHPCompatibility/PHPCompatibility/pull/851)
+    - The sniff will now also throw errors for each dereference found on the array/string, not just the first one.
+- :pushpin: `PHPCompatibility.Syntax.NewClassMemberAccess` sniff: the sniff will now also recognize class member access on instantiation and cloning using curly braces as was (silently) supported since PHP 7.0. [#852](https://github.com/PHPCompatibility/PHPCompatibility/pull/852)
+    - The sniff will now also throw errors for each access detected, not just the first one.
+    - The line number on which the error is thrown in now set more precisely.
+- :pushpin: `PHPCompatibility.Syntax.NewFunctionArrayDereferencing` sniff: the sniff will now also recognize function array dereferencing using curly braces as was (silently) supported since PHP 7.0. [#853](https://github.com/PHPCompatibility/PHPCompatibility/pull/853)
+    - The sniff will now also throw errors for each access detected, not just the first one.
+    - The line number on which the error is thrown in now set more precisely.
+- :recycle: Various code clean-up and improvements. [#849](https://github.com/PHPCompatibility/PHPCompatibility/pull/849), [#850](https://github.com/PHPCompatibility/PHPCompatibility/pull/850)
+- :recycle: Various minor inline documentation fixes. [#854](https://github.com/PHPCompatibility/PHPCompatibility/pull/854), [#886](https://github.com/PHPCompatibility/PHPCompatibility/pull/886)
+- :wrench: Travis: various tweaks to the build script. [#834](https://github.com/PHPCompatibility/PHPCompatibility/pull/834), [#842](https://github.com/PHPCompatibility/PHPCompatibility/pull/842)
+
+### Fixed
+- :bug: `PHPCompatibility.FunctionDeclarations.ForbiddenParametersWithSameName` sniff: variable names are case-sensitive, so recognition of same named parameters should be done in a case-sensitive manner. [#848](https://github.com/PHPCompatibility/PHPCompatibility/pull/848)
+- :bug: `PHPCompatibility.FunctionDeclarations.NewExceptionsFromToString` sniff: Exceptions thrown within a `try` should not trigger the sniff. [#880](https://github.com/PHPCompatibility/PHPCompatibility/pull/880). Fixes [#863](https://github.com/PHPCompatibility/PHPCompatibility/issues/863)
+- :bug: `PHPCompatibility.FunctionDeclarations.NewExceptionsFromToString` sniff: the `$ooScopeTokens` property should never have been a public property. [#880](https://github.com/PHPCompatibility/PHPCompatibility/pull/880).
+- :umbrella: Some of the unit tests for the `PHPCompatibility.Operators.RemovedTernaryAssociativity` sniff were not being run. [#836](https://github.com/PHPCompatibility/PHPCompatibility/pull/836)
+
+
 ## [9.2.0] - 2019-06-28
 
 See all related issues and PRs in the [9.2.0 milestone].
@@ -1230,7 +1391,13 @@ See all related issues and PRs in the [5.5 milestone].
 
 
 
-[Unreleased]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.2.0...HEAD
+[Unreleased]: https://github.com/PHPCompatibility/PHPCompatibility/compare/master...HEAD
+[9.3.5]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.3.4...9.3.5
+[9.3.4]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.3.3...9.3.4
+[9.3.3]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.3.2...9.3.3
+[9.3.2]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.3.1...9.3.2
+[9.3.1]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.3.0...9.3.1
+[9.3.0]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.2.0...9.3.0
 [9.2.0]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.1.1...9.2.0
 [9.1.1]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.1.0...9.1.1
 [9.1.0]: https://github.com/PHPCompatibility/PHPCompatibility/compare/9.0.0...9.1.0
@@ -1256,6 +1423,12 @@ See all related issues and PRs in the [5.5 milestone].
 [7.0]: https://github.com/PHPCompatibility/PHPCompatibility/compare/5.6...7.0
 [5.6]: https://github.com/PHPCompatibility/PHPCompatibility/compare/5.5...5.6
 
+[9.3.5 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/34
+[9.3.4 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/33
+[9.3.3 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/32
+[9.3.2 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/31
+[9.3.1 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/30
+[9.3.0 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/29
 [9.2.0 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/28
 [9.1.1 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/27
 [9.1.0 milestone]: https://github.com/PHPCompatibility/PHPCompatibility/milestone/25
@@ -1301,13 +1474,15 @@ See all related issues and PRs in the [5.5 milestone].
 [Mark Clements]: https://github.com/MarkMaldaba
 [Michael Babker]: https://github.com/mbabker
 [Nick Pack]: https://github.com/nickpack
+[Nikhil]: https://github.com/Nikschavan
 [Oliver Klee]: https://github.com/oliverklee
 [Remko van Bezooijen]: https://github.com/emkookmer
 [Rowan Collins]: https://github.com/IMSoP
 [Ryan Neufeld]: https://github.com/ryanneufeld
 [Sam Van der Borght]: https://github.com/samvdb
+[Sergii Bondarenko]: https://github.com/BR0kEN-
 [Tadas Juozapaitis]: https://github.com/kasp3r
 [Tim Millwood]: https://github.com/timmillwood
+[William Entriken]: https://github.com/fulldecent
 [Yılmaz]: https://github.com/edigu
 [Yoshiaki Yoshida]: https://github.com/kakakakakku
- 
