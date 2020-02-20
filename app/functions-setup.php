@@ -325,7 +325,7 @@ function body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
-	}	
+	}
 		return $classes;
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
