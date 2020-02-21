@@ -8,12 +8,17 @@
 
 .app-header {
 	height: 6rem;
+	.logocenter & {
+		height: 12rem;
+	}
+
 	// Backdrop when menu is open
 	.no-scroll & {
 		position: fixed;
 		width: 100%;
 		background: var(--color-white);
 		left: 0;
+
 	}
 
 	// Wrapper around the header content.
@@ -50,6 +55,10 @@
 			flex-basis: 100%;
 			display: flex;
 			justify-content: center;
+			flex-direction: column;
+			& > * {
+				align-self: center;
+			}
 		}
 	}
 
@@ -76,9 +85,7 @@
 		.logocenter & {
 			line-height: 1rem;
 		}
-		header:not(.logocenter) & {
 
-		}
 		.logoright & {
 			margin: 0 1rem 0 0;
 		}
@@ -147,7 +154,7 @@
 		.logoright & {
 			order: 2;
 		}
-		header:not(.logocenter) & {
+		body:not(.logocenter) & {
 			@media ( max-width: break( small ) ) {
 				@include screen-reader-text();
 			}
