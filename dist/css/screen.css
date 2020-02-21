@@ -761,6 +761,9 @@ input[type=submit]:focus {
 .app-header {
 	height: 6rem;
 }
+.logocenter .app-header {
+	height: 12rem;
+}
 .no-scroll .app-header {
 	position: fixed;
 	width: 100%;
@@ -802,6 +805,10 @@ input[type=submit]:focus {
 	flex-basis: 100%;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+}
+.logocenter .app-header__branding > * {
+	align-self: center;
 }
 .app-header__navigation {
 	display: flex;
@@ -882,7 +889,7 @@ input[type=submit]:focus {
 	order: 2;
 }
 @media (max-width: 600px) {
-	header:not(.logocenter) .app-header__menu-name {
+	body:not(.logocenter) .app-header__menu-name {
 		border: 0;
 		clip: rect(1px, 1px, 1px, 1px);
 		-webkit-clip-path: inset(50%);
@@ -997,6 +1004,9 @@ input[type=submit]:focus {
 
 .no-scroll .app-content {
 	padding-top: 6rem;
+}
+.logocenter .no-scroll .app-content {
+	padding-top: 12rem;
 }
 
 .comment__content a {
@@ -1131,8 +1141,11 @@ input[type=submit]:focus {
 	background: rgba(0, 0, 0, 0.75);
 	cursor: default;
 }
+.logocenter .menu--primary[aria-expanded=true] + .backdrop, .logocenter .menu--primary:target + .backdrop {
+	top: 12rem;
+}
 .logocenter .menu--primary[aria-expanded=true], .logocenter .menu--primary:target {
-	top: 6rem;
+	top: 12rem;
 }
 .menu--primary .menu__link {
 	color: #212121;

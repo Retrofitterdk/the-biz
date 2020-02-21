@@ -41,9 +41,12 @@
 				background: #000;
 				background: rgba(0,0,0,.75);
 				cursor: default;
+				.logocenter & {
+					top: 12rem;
+				}
 			}
 			.logocenter & {
-				top: 6rem;
+				top: 12rem;
 			}
 		}
 		.menu__link {
