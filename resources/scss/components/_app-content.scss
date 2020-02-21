@@ -9,7 +9,10 @@
 ////
 
 .app-content {
-    .no-scroll & {
-        padding-top: 6rem;
+	.no-scroll & {
+		padding-top: 6rem;
+		.logocenter & {
+			padding-top: 12rem;
+		}
     }
 }
