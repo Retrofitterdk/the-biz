@@ -11,8 +11,26 @@
 .app-content {
 	.no-scroll & {
 		padding-top: 6rem;
+		.has-costom-logo & {
+			padding-top: 10rem;
+		}
 		.logocenter & {
-			padding-top: 12rem;
+			padding-top: 10rem;
+			@media ( max-width: break( medium ) ) {
+				padding-top: 8rem;
+			}
+		}
+		.hide-site-description.logocenter & {
+			padding-top: 8rem;
+		}
+		.has-custom-logo.logocenter & {
+			padding-top: 18rem;
+			@media ( max-width: break( medium ) ) {
+				padding-top: 14rem;
+			}
+		}
+		.has-custom-logo.hide-site-description.logocenter & {
+			padding-top: 14rem;
 		}
     }
 }
