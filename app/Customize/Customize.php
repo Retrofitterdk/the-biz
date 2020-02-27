@@ -101,23 +101,17 @@ class Customize implements Bootable {
 			$setting->transport = 'postMessage';
 		} );
 
-		// Register the site title/site description settings.
-		$manager->add_setting( 'hide_site_title', [
-			'default'           => false,
-			'sanitize_callback' => 'wp_validate_boolean',
-			'transport'         => 'postMessage'
-		] );
 		$manager->add_setting( 'hide_site_description', [
 			'default'           => false,
 			'sanitize_callback' => 'wp_validate_boolean',
-			'transport'         => 'postMessage'
+			'transport'         => 'refresh'
 		] );
 
 		// Register the column/grid settings.
 		$manager->add_setting( 'two_column_grid', [
 			'default'           => false,
 			'sanitize_callback' => 'wp_validate_boolean',
-			'transport'         => 'postMessage'
+			'transport'         => 'refresh'
 		] );
 
 		// Register logo alignment settings.
@@ -141,18 +135,11 @@ class Customize implements Bootable {
 	public function registerControls( WP_Customize_Manager $manager ) {
 		// Register the site title/site description controls.
 		$manager->add_control( 'hide_site_description', [
-			'label'    		=> __( 'Show only site title, not site description .', 'the-biz' ),
+			'label'    		=> __( 'Hide site description.', 'the-biz' ),
 			'section'  		=> 'title_tagline',
             'settings'      => 'hide_site_description',
 			'type'     		=> 'checkbox',
 			'priority'      => 45
-		] );
-		$manager->add_control( 'hide_site_title', [
-			'label'    		=> __( 'Show only site description, not site title .', 'the-biz' ),
-			'section'  		=> 'title_tagline',
-            'settings'      => 'hide_site_title',
-			'type'     		=> 'checkbox',
-			'priority'      => 50
 		] );
 
 		// Register the column/grid controls.
