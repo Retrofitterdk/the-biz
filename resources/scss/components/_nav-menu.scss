@@ -45,8 +45,29 @@
 					top: 12rem;
 				}
 			}
+			.has-custom-logo & {
+				top: 10rem;
+			}
 			.logocenter & {
-				top: 12rem;
+				top: 10rem;
+				@media ( max-width: break( medium ) ) {
+					top: 8rem;
+				}
+			}
+			.hide-site-description.logocenter & {
+				top: 8rem;
+			}
+			.hide-site-description.logocenter & {
+				top: 8rem;
+			}
+			.has-custom-logo.logocenter & {
+				top: 18rem;
+				@media ( max-width: break( medium ) ) {
+					top: 14rem;
+				}
+			}
+			.has-custom-logo.hide-site-description.logocenter & {
+				top: 14rem;
 			}
 		}
 		.menu__link {
@@ -68,11 +89,11 @@
 		}
 		.menu__items {
 			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-start;
+			// flex-wrap: wrap;
+			justify-content: space-evenly;
 			> li {
 				margin-top: 1rem;
-				width: 100%;
+				// width: 100%;
 				> a {
 					font-weight: bolder;
 					text-transform: uppercase;
@@ -90,6 +111,7 @@
 		// line-height: 3rem;
 		overflow: hidden;
 		display: none;
+		margin-right: 1rem;
 		@media ( min-width: break( small ) ) {
 			display: inline-flex;
 			flex: 0 2 auto;
@@ -123,6 +145,60 @@
 			}
 		}
 	}
+	&--social {
+		.menu__items {
+			display: flex;
+			justify-content: space-between;
+			max-width: 16rem;
+		}
+		.menu__link {
+			@include font-size(32);
+			// font-size: var(--fontsize-regular);
+		}
+		a {
+			&:before {
+				content: "*";
+				font-family: "Finicon";
+				vertical-align: middle;
+			}
+			&[href*="linkedin.com"],
+			&[href*="linkedin.dk"] {
+				&:before {
+					content: "L";
+				}
+			}
+			&[href*="facebook.com"],
+			&[href*="facebook.dk"] {
+				&:before {
+					content: "F";
+				}
+			}
+			&[href*="instagram.com"],
+			&[href*="instagram.dk"] {
+				&:before {
+					content: "I";
+				}
+			}
+			&[href*="twitter.com"],
+			&[href*="twitter.dk"] {
+				&:before {
+					content: "T";
+				}
+			}
+			&[href*="pinterest.com"],
+			&[href*="pinterest.dk"] {
+				&:before {
+					content: "P";
+				}
+			}
+			&[href*="mailto:"] {
+				&:before {
+					content: "a";
+				}
+			}
+		}
+	}
+
 
 	// Menu title.
 	&__title {}
