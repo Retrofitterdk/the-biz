@@ -8,8 +8,27 @@
 
 .app-header {
 	height: 6rem;
+	.has-custom-logo & {
+		height: 10rem;
+	}
 	.logocenter & {
-		height: 12rem;
+		height: 10rem;
+		@media ( max-width: break( medium ) ) {
+			height: 8rem;
+		}
+	}
+	.hide-site-description.logocenter & {
+		height: 8rem;
+	}
+	.has-custom-logo.logocenter & {
+		height: 18rem;
+		@media ( max-width: break( medium ) ) {
+			height: 14rem;
+		}
+
+	}
+	.has-custom-logo.hide-site-description.logocenter & {
+		height: 14rem;
 	}
 
 	// Backdrop when menu is open
@@ -18,7 +37,6 @@
 		width: 100%;
 		background: var(--color-white);
 		left: 0;
-
 	}
 
 	// Wrapper around the header content.
@@ -41,7 +59,8 @@
 
 	// Wrapper around the title and description.
 	&__branding {
-		line-height: 3rem;
+		display: flex;
+		// line-height: 3rem;
 		overflow: hidden;
 		flex: 0 1 auto;
 		min-width: 200px;
@@ -69,9 +88,18 @@
 		max-height: 3rem;
 		font-weight: bolder;
 		color: var(--color-primary);
+		flex: 0 1 20rem;
 		@include font-size(20);
+		@media ( max-width: break( medium ) ) {
+			flex-basis: auto;
+		}
+		.hide-site-description & {
+			flex-basis: auto;
+		}
 		.logocenter & {
-			line-height: 1rem;
+			// line-height: 1rem;
+			flex-basis: auto;
+			padding-left: .5rem;
 		}
 	}
 
@@ -79,15 +107,16 @@
 	&__toggle {
 		line-height: 3rem;
 		flex: 0 1 auto;
-		margin: 0 0 0 1rem;
+		margin: 0;
+		font-weight: bold;
 		@include font-size(20);
 
-		.logocenter & {
-			line-height: 1rem;
-		}
+		// .logocenter & {
+		// 	line-height: 1rem;
+		// }
 
 		.logoright & {
-			margin: 0 1rem 0 0;
+			// margin: 0 1rem 0 0;
 		}
 		@media ( min-width: break( small ) ) {
 			min-width: 130px;
@@ -158,82 +187,6 @@
 			@media ( max-width: break( small ) ) {
 				@include screen-reader-text();
 			}
-		}
-	}
-
-	// Output from the `custom-logo` feature.
-	&__logo {	}
-
-	// Logo link.
-	&__logo-link {
-		display: inline-block;
-		max-width: 270px;
-		max-height: 30px;
-	}
-
-	// The site title.
-	&__title {
-		display: inline-block;
-		text-transform: lowercase;
-		@include font-size(22);
-		// line-height: 3rem;
-		@media ( min-width: break( medium ) ) {
-			@include font-size(26);
-		}
-		// &:before {
-		// 	content: 'fin';
-		// 	font-family: var(--font-secondary);
-		// 	font-weight: normal;
-		// }
-		// &:after {
-		// 	content: ':kommunikation';
-		// 	font-family: var(--font-primary);
-		// }
-		// &:first-letter {
-		// 	color: red;
-		// }
-	}
-
-	// Site title link.
-	&__title-link {
-		display: inline-block;
-		text-decoration: none;
-		color: var(--color-black);
-		&:visited,
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--color-black);
-		}
-		& .first {
-			font-family: var(--font-secondary);
-			font-weight: normal;
-		}
-		& .divider {
-			color: var(--color-primary);
-			font-family: "Finicon";
-			vertical-align: bottom;
-			letter-spacing: -.35em;
-			margin-left: -.35em;
-		}
-		& .last {
-			font-weight: bold;
-			font-family: var(--font-primary);
-		}
-		.hide-site-title & {
-			@include screen-reader-text();
-		}
-	}
-
-	// The site description.
-	&__description {
-		display: inline-block;
-		margin: 0 0 0 1rem;
-		@media ( max-width: break( medium ) ) {
-			@include screen-reader-text();
-		}
-		.hide-site-description & {
-			@include screen-reader-text();
 		}
 	}
 }
