@@ -2,9 +2,8 @@
 
 <?php the_custom_logo() ?>
 <?php the_biz_info() ?>
-
-
-	</footer>
+<?php Hybrid\View\display( 'nav/menu', 'social', [ 'location' => 'social' ] ) ?>
+</footer>
 
 </div><!-- .app -->
 
