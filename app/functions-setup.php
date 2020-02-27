@@ -34,6 +34,33 @@ add_action( 'init', function() {
 	remove_filter( 'get_custom_logo', 'Hybrid\custom_logo_class', 5 );
 }, 5 );
 
+/**
+ * Adds custom classes to the core WP logo.
+ *
+ * @since  5.0.0
+ * @access public
+ * @param  string  $logo
+ * @return string
+ */
+function the_biz_custom_logo_class( $logo ) {
+
+	$logo = preg_replace(
+		"/(<a.+?)class=(['\"])(.+?)(['\"])/i",
+		'$1class=$2site-info__logo-link $3$4',
+		$logo,
+		1
+	);
+
+	return preg_replace(
+		"/(<img.+?)class=(['\"])(.+?)(['\"])/i",
+		'$1class=$2site-info__logo $3$4',
+		$logo,
+		1
+	);
+}
+add_filter( 'get_custom_logo', __NAMESPACE__ . '\the_biz_custom_logo_class', 5 );
+
+
 add_action( 'after_setup_theme', function() {
 
 	// Sets the theme content width. This variable is also set in the
@@ -309,12 +336,14 @@ add_action( 'widgets_init', function() {
 // Adds classes conditionally to body tag
 function body_classes( $classes ) {
 	$hidesitedesc = get_theme_mod( 'hide_site_description' );
-	$hidesitetitle = get_theme_mod( 'hide_site_title' );
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( is_home() ) {
 		$classes[] = 'blog';
 	} elseif ( is_front_page() ) {
 		$classes[] = 'frontpage';
+	}
+	if ( has_custom_logo() ) {
+		$classes[] = 'has-custom-logo';
 	}
 	if ( is_singular() ) {
 		// Adds `singular` to singular pages.
@@ -334,11 +363,8 @@ function body_classes( $classes ) {
 	}
 	if ( !display_header_text() ) {
 		$classes[] = 'hide-site-title hide-site-description';
-	} else {
-		if ( $hidesitedesc ) {
+	} elseif ( $hidesitedesc ) {
 		$classes[] = 'hide-site-description';
-		} if ( $hidesitetitle ) {
-		$classes[] = 'hide-site-title';
 		}
 	}
 	$logoalignment = get_theme_mod( 'app_header_alignment' );
@@ -348,22 +374,6 @@ function body_classes( $classes ) {
 		return $classes;
 	}
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
-
-// Adds classes conditionally to app-header
-function headerAttr(  $attr, $context ) {
-	if ( 'app-header' !== $context ) {
-		return $attr;
-	}
-
-	$logoalignment = get_theme_mod( 'app_header_alignment' );
-
-	if ( $logoalignment ) {
-		$attr['class'] .= sprintf(' ' . $logoalignment);
-	}
-	return $attr;
-}
-
-// add_filter( 'hybrid/attr/header', __NAMESPACE__ . '\headerAttr' , 10, 2 );
 
 function change_blogname( $output, $show )
 {
