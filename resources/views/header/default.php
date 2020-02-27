@@ -12,10 +12,17 @@
 	<header <?php Hybrid\Attr\display( 'header', 'app-header', [ 'class' => 'app-header' ] ) ?>>
 		<div class="app-header__wrapper">
 			<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'the-biz' ) ?></a>
-			<div class="app-header__branding">
+			<div class="site-info app-header__branding">
 				<?php the_custom_logo() ?>
-				<?php Hybrid\Site\display_title() ?>
-				<?php Hybrid\Site\display_description() ?>
+				<?php Hybrid\Site\display_title(array(
+						'tag'        => is_front_page() ? 'h1' : 'div',
+						'class'      => 'site-info__title',
+						'link_class' => 'site-info__title-link'
+						)) ?>
+				<?php Hybrid\Site\display_description(array(
+					'tag'   => 'div',
+					'class' => 'site-info__description',
+				)) ?>
 			</div>
 			<?php the_custom_header_markup() ?>
 			<div id="primary-menu-container" class="app-header__navigation">
@@ -26,8 +33,9 @@
 					</a>
 				</h3>
 				<h3 class="app-header__toggle app-header__toggle--closed">
-					<span class="app-header__menu-name"><?php Hybrid\Menu\display_name( 'primary' ) ?></span>
-					<a href="#" role="button" class="menu-toggle" aria-controls="primary-menu" aria-label="<?php esc_html_e( 'Close primary menu', 'the-biz' ); ?>" aria-expanded="false"></a>
+					<a href="#" role="button" class="menu-toggle" aria-controls="primary-menu" aria-label="<?php esc_html_e( 'Close primary menu', 'the-biz' ); ?>" aria-expanded="false">
+						<span class="app-header__menu-name"><?php Hybrid\Menu\display_name( 'primary' ) ?></span>
+					</a>
 				</h3>
 				<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'location' => 'primary' ] ) ?>
 			</div>
