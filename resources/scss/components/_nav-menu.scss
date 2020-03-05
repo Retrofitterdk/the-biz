@@ -41,8 +41,26 @@
 				background: #000;
 				background: rgba(0,0,0,.75);
 				cursor: default;
+				.has-custom-logo & {
+					top: 12rem;
+				}
 				.logocenter & {
 					top: 12rem;
+					@media ( max-width: break( medium ) ) {
+						top: 10rem;
+					}
+				}
+				.hide-site-description.logocenter & {
+					top: 8rem;
+				}
+				.has-custom-logo.logocenter & {
+					top: 18rem;
+					@media ( max-width: break( medium ) ) {
+						top: 14rem;
+					}
+				}
+				.has-custom-logo.hide-site-description.logocenter & {
+					top: 14rem;
 				}
 			}
 			.has-custom-logo & {
@@ -53,9 +71,6 @@
 				@media ( max-width: break( medium ) ) {
 					top: 8rem;
 				}
-			}
-			.hide-site-description.logocenter & {
-				top: 8rem;
 			}
 			.hide-site-description.logocenter & {
 				top: 8rem;
