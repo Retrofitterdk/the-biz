@@ -936,29 +936,29 @@ input[type=submit]:focus {
 .no-scroll .app-content {
 	padding-top: 6rem;
 }
-.has-costom-logo .no-scroll .app-content {
+.no-scroll.has-costom-logo .app-content {
 	padding-top: 10rem;
 }
-.logocenter .no-scroll .app-content {
+.no-scroll.logocenter .app-content {
 	padding-top: 10rem;
 }
 @media (max-width: 880px) {
-	.logocenter .no-scroll .app-content {
+	.no-scroll.logocenter .app-content {
 		padding-top: 8rem;
 	}
 }
-.hide-site-description.logocenter .no-scroll .app-content {
+.no-scroll.hide-site-description.logocenter .app-content {
 	padding-top: 8rem;
 }
-.has-custom-logo.logocenter .no-scroll .app-content {
+.no-scroll.has-custom-logo.logocenter .app-content {
 	padding-top: 18rem;
 }
 @media (max-width: 880px) {
-	.has-custom-logo.logocenter .no-scroll .app-content {
+	.no-scroll.has-custom-logo.logocenter .app-content {
 		padding-top: 14rem;
 	}
 }
-.has-custom-logo.hide-site-description.logocenter .no-scroll .app-content {
+.no-scroll.has-custom-logo.hide-site-description.logocenter .app-content {
 	padding-top: 14rem;
 }
 
@@ -1094,8 +1094,30 @@ input[type=submit]:focus {
 	background: rgba(0, 0, 0, 0.75);
 	cursor: default;
 }
+.has-custom-logo .menu--primary[aria-expanded=true] + .backdrop, .has-custom-logo .menu--primary:target + .backdrop {
+	top: 12rem;
+}
 .logocenter .menu--primary[aria-expanded=true] + .backdrop, .logocenter .menu--primary:target + .backdrop {
 	top: 12rem;
+}
+@media (max-width: 880px) {
+	.logocenter .menu--primary[aria-expanded=true] + .backdrop, .logocenter .menu--primary:target + .backdrop {
+		top: 10rem;
+	}
+}
+.hide-site-description.logocenter .menu--primary[aria-expanded=true] + .backdrop, .hide-site-description.logocenter .menu--primary:target + .backdrop {
+	top: 8rem;
+}
+.has-custom-logo.logocenter .menu--primary[aria-expanded=true] + .backdrop, .has-custom-logo.logocenter .menu--primary:target + .backdrop {
+	top: 18rem;
+}
+@media (max-width: 880px) {
+	.has-custom-logo.logocenter .menu--primary[aria-expanded=true] + .backdrop, .has-custom-logo.logocenter .menu--primary:target + .backdrop {
+		top: 14rem;
+	}
+}
+.has-custom-logo.hide-site-description.logocenter .menu--primary[aria-expanded=true] + .backdrop, .has-custom-logo.hide-site-description.logocenter .menu--primary:target + .backdrop {
+	top: 14rem;
 }
 .has-custom-logo .menu--primary[aria-expanded=true], .has-custom-logo .menu--primary:target {
 	top: 10rem;
@@ -1107,9 +1129,6 @@ input[type=submit]:focus {
 	.logocenter .menu--primary[aria-expanded=true], .logocenter .menu--primary:target {
 		top: 8rem;
 	}
-}
-.hide-site-description.logocenter .menu--primary[aria-expanded=true], .hide-site-description.logocenter .menu--primary:target {
-	top: 8rem;
 }
 .hide-site-description.logocenter .menu--primary[aria-expanded=true], .hide-site-description.logocenter .menu--primary:target {
 	top: 8rem;

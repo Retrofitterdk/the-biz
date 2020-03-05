@@ -44,6 +44,14 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Enqueue fonts styles.
 	wp_enqueue_style( 'the-biz-fonts', asset( 'fonts/fonts.css' ), null, null );
 
+	// Enqueue logocenter styles where appropriate.
+	$logoalignment = get_theme_mod( 'app_header_alignment' );
+	if  ($logoalignment == 'logocenter') {
+	wp_enqueue_style( 'the-biz-logocenter', asset( 'css/logocenter.css' ), null, null );
+	}
+	if  ($logoalignment == 'logoright') {
+	wp_enqueue_style( 'the-biz-logoright', asset( 'css/logoright.css' ), null, null );
+	}
 } );
 
 /**

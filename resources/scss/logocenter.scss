@@ -1,0 +1,65 @@
+////
+/// Editor stylesheet.
+///
+/// This is the stylesheet for the centered logo option.
+///
+/// @group  Styles
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+// Import settings and tools.
+@import 'settings/_index';
+@import 'tools/_index';
+
+.app-header {
+	.logocenter & {
+		height: 10rem;
+		@media ( max-width: break( medium ) ) {
+			height: 8rem;
+		}
+	}
+	.hide-site-description.logocenter & {
+		height: 8rem;
+	}
+	.has-custom-logo.logocenter & {
+		height: 18rem;
+		@media ( max-width: break( medium ) ) {
+			height: 14rem;
+		}
+	}
+	.has-custom-logo.hide-site-description.logocenter & {
+		height: 14rem;
+	}
+
+	// Wrapper around the header content.
+	&__wrapper {
+		.logocenter & {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	// Wrapper around the title and description.
+	&__branding {
+		.logocenter & {
+			flex-basis: 100%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			& > * {
+				align-self: center;
+			}
+		}
+	}
+
+	// Wrapper around the menu area.
+	&__navigation {
+		.logocenter & {
+			// line-height: 1rem;
+			flex-basis: auto;
+			padding-left: .5rem;
+		}
+	}
+}
+

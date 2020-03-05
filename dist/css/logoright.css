@@ -1,0 +1,16 @@
+.logoright .app-header__branding {
+	order: 2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.logoright .app-header__toggle--open a:before {
+	content: "=";
+}
+.logoright .app-header__toggle--open a:after {
+	content: "";
+}
+.logoright .app-header__menu-name {
+	order: 2;
+}
+/*# sourceMappingURL=logoright.css.map*/

@@ -287,6 +287,28 @@
 
 /***/ }),
 
+/***/ "./resources/scss/logocenter.scss":
+/*!****************************************!*\
+  !*** ./resources/scss/logocenter.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/scss/logoright.scss":
+/*!***************************************!*\
+  !*** ./resources/scss/logoright.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/scss/screen.scss":
 /*!************************************!*\
   !*** ./resources/scss/screen.scss ***!
@@ -299,15 +321,17 @@
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/scss/screen.scss ./resources/scss/editor.scss ./resources/scss/customize-controls.scss ***!
-  \**************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/screen.scss ./resources/scss/editor.scss ./resources/scss/logocenter.scss ./resources/scss/logoright.scss ./resources/scss/customize-controls.scss ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/scss/screen.scss */"./resources/scss/screen.scss");
 __webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/scss/editor.scss */"./resources/scss/editor.scss");
+__webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/scss/logocenter.scss */"./resources/scss/logocenter.scss");
+__webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/scss/logoright.scss */"./resources/scss/logoright.scss");
 module.exports = __webpack_require__(/*! /Users/steffen/Local Sites/rohcecc/app/public/wp-content/themes/the-biz/resources/scss/customize-controls.scss */"./resources/scss/customize-controls.scss");
 
 

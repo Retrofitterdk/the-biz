@@ -1,0 +1,53 @@
+////
+/// Editor stylesheet.
+///
+/// This is the stylesheet for right logo option.
+///
+/// @group  Styles
+/// @author Steffen Bang Nielsen <sbn@retrofitter.dk>
+/// @link   https://retrofitter.dk
+////
+
+// Import settings and tools.
+@import 'settings/_index';
+@import 'tools/_index';
+
+
+.app-header {
+	// Wrapper around the title and description.
+	&__branding {
+		.logoright & {
+			order: 2;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+	}
+
+	// Buttons for toggling menu
+	&__toggle {
+		.logoright & {
+			// margin: 0 1rem 0 0;
+		}
+		&--open {
+			a {
+				.logoright & {
+					&:before {
+					content: "=";
+					}
+					&:after {
+					content: "";
+					}
+				}
+			}
+		}
+	}
+
+	// Menu name.
+	&__menu-name {
+		.logoright & {
+			order: 2;
+		}
+	}
+}
+

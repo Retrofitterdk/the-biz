@@ -1,0 +1,40 @@
+.logocenter .app-header {
+	height: 10rem;
+}
+@media (max-width: 880px) {
+	.logocenter .app-header {
+		height: 8rem;
+	}
+}
+.hide-site-description.logocenter .app-header {
+	height: 8rem;
+}
+.has-custom-logo.logocenter .app-header {
+	height: 18rem;
+}
+@media (max-width: 880px) {
+	.has-custom-logo.logocenter .app-header {
+		height: 14rem;
+	}
+}
+.has-custom-logo.hide-site-description.logocenter .app-header {
+	height: 14rem;
+}
+.logocenter .app-header__wrapper {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.logocenter .app-header__branding {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.logocenter .app-header__branding > * {
+	align-self: center;
+}
+.logocenter .app-header__navigation {
+	flex-basis: auto;
+	padding-left: 0.5rem;
+}
+/*# sourceMappingURL=logocenter.css.map*/
