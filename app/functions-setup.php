@@ -374,20 +374,8 @@ function body_classes( $classes ) {
 	}
 	add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
-function change_blogname( $output, $show )
-{
-    if ('name' == $show) {
-		$pos = strpos($output, ':');
-		if ($pos === false) {
-			$splittitle = $output;
-		} else {
-			$splittitle = explode(":", $output );
-			$output = '<span itemprop="legalName" class="screen-reader-text">' . $output . '</span>';
-			$output .= '<span class="first">' . $splittitle[0]. '</span><span class="divider">:</span><span class="last">' . $splittitle[1] . '</span>';
-		}
-		// $output = $splittitle;
-	}
-    return $output;
+function change_blogname_delimiter( $delimiter ){
+	$delimiter = '-';
+	return $delimiter;
 }
-
-add_filter( 'bloginfo', __NAMESPACE__ . '\change_blogname', 10, 2 );
+// add_filter( 'biz_info_change_delimiter', __NAMESPACE__ . '\change_blogname_delimiter', 10, 2 );
