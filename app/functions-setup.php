@@ -366,14 +366,13 @@ function body_classes( $classes ) {
 	} elseif ( $hidesitedesc ) {
 		$classes[] = 'hide-site-description';
 		}
-	}
 	$logoalignment = get_theme_mod( 'app_header_alignment' );
 		if ( $logoalignment ) {
 		$classes[] = $logoalignment;
 		}
-		return $classes;
+	return $classes;
 	}
-add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
+	add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
 function change_blogname( $output, $show )
 {
@@ -391,4 +390,4 @@ function change_blogname( $output, $show )
     return $output;
 }
 
-// add_filter( 'bloginfo', __NAMESPACE__ . '\change_blogname', 10, 2 );
+add_filter( 'bloginfo', __NAMESPACE__ . '\change_blogname', 10, 2 );
